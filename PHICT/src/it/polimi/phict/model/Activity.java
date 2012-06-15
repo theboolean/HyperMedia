@@ -1,5 +1,7 @@
 package it.polimi.phict.model;
 
+import java.util.List;
+
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.InverseModelListRef;
 import org.slim3.datastore.Model;
@@ -21,9 +23,6 @@ public class Activity {
     
     private String goals, schedule;
     
-    public ModelRef<Project> getProjectRef() {
-        return projectRef;
-    }
     
     public Key getId() {
         return id;
@@ -49,7 +48,12 @@ public class Activity {
         this.schedule = schedule;
     }
     
-    public InverseModelListRef<Result, Activity> getResultListRef() {
-        return resultListRef;
+    
+    public List<Result> getResults() {
+        return resultListRef.getModelList();
+    }
+    
+    public Project getProject() {
+        return projectRef.getModel();
     }
 }

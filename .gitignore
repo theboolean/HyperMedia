@@ -2,3 +2,9 @@ desktop.ini
 .dropbox
 *.DS_Store
 .komodotools
+.org.eclipse.jtd.*.prefs
+swt.jar
+swt-debug.jar
+.classpath
+PHICT/war/WEB-INF/classes/*.class
+PHICT/war/WEB-INF/classes/lib/*

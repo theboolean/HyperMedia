@@ -15,6 +15,7 @@ public class Result {
     private ModelRef<Activity> activityRef = new ModelRef<Activity>(Activity.class);
     
     private String overview;
+    private Boolean important;
 
     public Key getId() {
         return id;
@@ -32,7 +33,20 @@ public class Result {
         this.overview = overview;
     }
 
-    public ModelRef<Activity> getActivityRef() {
-        return activityRef;
+    public Boolean isImportant() {
+        return important;
+    }
+    
+    public void setImportant(Boolean important) {
+        this.important = important;
+    }
+    
+    
+    public Activity getActivityRef() {
+        return activityRef.getModel();
+    }
+    
+    public Project getProjectRef() {
+        return activityRef.getModel().getProject();
     }
 }

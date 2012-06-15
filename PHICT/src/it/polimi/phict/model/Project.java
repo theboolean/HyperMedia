@@ -1,5 +1,8 @@
 package it.polimi.phict.model;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.InverseModelListRef;
 import org.slim3.datastore.Model;
@@ -56,7 +59,63 @@ public class Project {
         this.publicDocumentation = publicDocumentation;
     }
     
-    public InverseModelListRef<Activity, Project> getActivityListRef() {
-        return activityListRef;
+    
+    public List<Activity> getActivities() {
+        return activityListRef.getModelList();
+    }
+    
+    public Iterable<Result> getImportantResults() {
+        return new Iterable<Result>() {
+            public Iterator<Result> iterator() {
+                return new ImportantResultIterator();
+            }
+        };
+    }
+    
+    
+    private class ImportantResultIterator implements Iterator<Result> {
+        Iterator<Activity> activityIterator;
+        Iterator<Result> activityResultIterator;
+        Result current;
+        
+        public boolean hasNext() {
+            if (activityResultIterator == null) {
+                return false;
+            }
+            
+            do {
+                while(activityResultIterator.hasNext()) {
+                    Result result = activityResultIterator.next();
+                    if (result.isImportant()) {
+                        current = result;
+                        return true;
+                    }
+                }
+                    
+                if (activityIterator.hasNext()) {
+                    activityResultIterator = activityIterator.next().getResults().iterator();
+                } else {
+                    break;
+                }
+            } while (true);
+            
+            return false;
+        }
+        
+        public Result next() {
+            return current;
+        }
+        
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+        
+        public ImportantResultIterator() {
+            this.activityIterator = getActivities().iterator();
+            
+            if (this.activityIterator.hasNext()) {
+                this.activityResultIterator = activityIterator.next().getResults().iterator();
+            }
+        }
     }
 }
