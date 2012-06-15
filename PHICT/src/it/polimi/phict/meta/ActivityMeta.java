@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 16:46:26")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 19:03:54")
 /** */
 public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Activity> {
 
@@ -112,10 +112,6 @@ public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.
             writer.setNextPropertyName("id");
             encoder0.encode(writer, m.getId());
         }
-        if(m.getProjectRef() != null && m.getProjectRef().getKey() != null){
-            writer.setNextPropertyName("projectRef");
-            encoder0.encode(writer, m.getProjectRef(), maxDepth, currentDepth);
-        }
         if(m.getSchedule() != null){
             writer.setNextPropertyName("schedule");
             encoder0.encode(writer, m.getSchedule());
@@ -133,7 +129,7 @@ public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.
         reader = rootReader.newObjectReader("id");
         m.setId(decoder0.decode(reader, m.getId()));
         reader = rootReader.newObjectReader("projectRef");
-        decoder0.decode(reader, m.getProjectRef(), maxDepth, currentDepth);
+        decoder0.decode(reader, (org.slim3.datastore.ModelRef)null, maxDepth, currentDepth);
         reader = rootReader.newObjectReader("schedule");
         m.setSchedule(decoder0.decode(reader, m.getSchedule()));
         return m;

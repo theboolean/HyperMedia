@@ -1,11 +1,14 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 16:46:26")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 19:03:54")
 /** */
 public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Result> {
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Result, com.google.appengine.api.datastore.Key> id = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Result, com.google.appengine.api.datastore.Key>(this, "__key__", "id", com.google.appengine.api.datastore.Key.class);
+
+    /** */
+    public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Result, java.lang.Boolean> important = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Result, java.lang.Boolean>(this, "important", "important", java.lang.Boolean.class);
 
     /** */
     public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Result> overview = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Result>(this, "overview", "overview");
@@ -28,6 +31,7 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
     public it.polimi.phict.model.Result entityToModel(com.google.appengine.api.datastore.Entity entity) {
         it.polimi.phict.model.Result model = new it.polimi.phict.model.Result();
         model.setId(entity.getKey());
+        model.setImportant((java.lang.Boolean) entity.getProperty("important"));
         model.setOverview((java.lang.String) entity.getProperty("overview"));
         return model;
     }
@@ -41,6 +45,7 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
         } else {
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
+        entity.setProperty("important", m.getImportant());
         entity.setProperty("overview", m.getOverview());
         return entity;
     }
@@ -99,13 +104,13 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
         it.polimi.phict.model.Result m = (it.polimi.phict.model.Result) model;
         writer.beginObject();
         org.slim3.datastore.json.Default encoder0 = new org.slim3.datastore.json.Default();
-        if(m.getActivityRef() != null && m.getActivityRef().getKey() != null){
-            writer.setNextPropertyName("activityRef");
-            encoder0.encode(writer, m.getActivityRef(), maxDepth, currentDepth);
-        }
         if(m.getId() != null){
             writer.setNextPropertyName("id");
             encoder0.encode(writer, m.getId());
+        }
+        if(m.getImportant() != null){
+            writer.setNextPropertyName("important");
+            encoder0.encode(writer, m.getImportant());
         }
         if(m.getOverview() != null){
             writer.setNextPropertyName("overview");
@@ -120,9 +125,11 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
         org.slim3.datastore.json.JsonReader reader = null;
         org.slim3.datastore.json.Default decoder0 = new org.slim3.datastore.json.Default();
         reader = rootReader.newObjectReader("activityRef");
-        decoder0.decode(reader, m.getActivityRef(), maxDepth, currentDepth);
+        decoder0.decode(reader, (org.slim3.datastore.ModelRef)null, maxDepth, currentDepth);
         reader = rootReader.newObjectReader("id");
         m.setId(decoder0.decode(reader, m.getId()));
+        reader = rootReader.newObjectReader("important");
+        m.setImportant(decoder0.decode(reader, m.getImportant()));
         reader = rootReader.newObjectReader("overview");
         m.setOverview(decoder0.decode(reader, m.getOverview()));
         return m;

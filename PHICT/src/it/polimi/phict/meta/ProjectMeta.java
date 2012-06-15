@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 16:46:26")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 19:03:54")
 /** */
 public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Project> {
 
