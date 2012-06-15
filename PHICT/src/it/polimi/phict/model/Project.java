@@ -17,6 +17,10 @@ public class Project {
     private InverseModelListRef<Activity, Project> activityListRef = 
             new InverseModelListRef<Activity, Project>(Activity.class, "projectRef", this);
     
+    @Attribute(persistent = false)
+    private InverseModelListRef<Event, Project> eventsListRef = 
+            new InverseModelListRef<Event, Project>(Event.class, "projectRef", this);
+    
     private String name, description, mainGoals, publicDocumentation;
     
     public Key getId() {
@@ -70,6 +74,10 @@ public class Project {
                 return new ImportantResultIterator();
             }
         };
+    }
+    
+    public List<Event> getEvents() {
+        return eventsListRef.getModelList();
     }
     
     

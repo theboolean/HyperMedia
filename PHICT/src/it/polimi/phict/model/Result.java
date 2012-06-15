@@ -42,11 +42,11 @@ public class Result {
     }
     
     
-    public Activity getActivityRef() {
+    public Activity getActivity() {
         return activityRef.getModel();
     }
     
-    public Project getProjectRef() {
+    public Project getProject() {
         return activityRef.getModel().getProject();
     }
 }
