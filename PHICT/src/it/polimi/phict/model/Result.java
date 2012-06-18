@@ -5,6 +5,7 @@ import org.slim3.datastore.Model;
 import org.slim3.datastore.ModelRef;
 
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.repackaged.com.google.cron.GrocParser.period_return;
 
 @Model
 public class Result {
@@ -48,5 +49,9 @@ public class Result {
     
     public Project getProject() {
         return activityRef.getModel().getProject();
+    }
+    
+    public ModelRef<Activity> getActivityRef() {
+        return activityRef;
     }
 }

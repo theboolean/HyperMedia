@@ -36,4 +36,8 @@ public class Event {
     public Project getProject() {
         return projectRef.getModel();
     }
+    
+    public ModelRef<Project> getProjectRef() {
+        return projectRef;
+    }
 }

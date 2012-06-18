@@ -28,4 +28,8 @@ public class Researcher {
     public Partner getPartner() {
         return partnerRef.getModel();
     }
+    
+    public ModelRef<Partner> getPartnerRef() {
+        return partnerRef;
+    }
 }

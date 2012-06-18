@@ -56,4 +56,12 @@ public class Activity {
     public Project getProject() {
         return projectRef.getModel();
     }
+    
+    public InverseModelListRef<Result, Activity> getResultListRef() {
+        return resultListRef;
+    }
+    
+    public ModelRef<Project> getProjectRef() {
+        return projectRef;
+    }
 }

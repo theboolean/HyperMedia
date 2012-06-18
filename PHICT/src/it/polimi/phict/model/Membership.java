@@ -33,4 +33,12 @@ public class Membership {
     public Project getProject() {
         return projectRef.getModel();
     }
+    
+    public ModelRef<Partner> getPartnerRef() {
+        return partnerRef;
+    }
+    
+    public ModelRef<Project> getProjectRef() {
+        return projectRef;
+    }
 }

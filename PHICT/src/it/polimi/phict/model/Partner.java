@@ -5,6 +5,7 @@ import java.util.List;
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.InverseModelListRef;
 import org.slim3.datastore.Model;
+import org.slim3.datastore.ModelRef;
 
 import com.google.appengine.api.datastore.Key;
 
@@ -46,5 +47,13 @@ public class Partner {
     
     public List<Researcher> getResearchers() {
         return researcherListRef.getModelList();
+    }
+    
+    public InverseModelListRef<Membership, Partner> getMembershipListRef() {
+        return membershipListRef;
+    }
+    
+    public InverseModelListRef<Researcher, Partner> getResearcherListRef() {
+        return researcherListRef;
     }
 }

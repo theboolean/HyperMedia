@@ -6,6 +6,8 @@ import java.util.List;
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.InverseModelListRef;
 import org.slim3.datastore.Model;
+import org.slim3.datastore.ModelRef;
+
 import com.google.appengine.api.datastore.Key;
 
 @Model
@@ -87,6 +89,18 @@ public class Project {
     
     public List<Membership> getMemberships() {
         return membershipListRef.getModelList();
+    }
+    
+    public InverseModelListRef<Activity, Project> getActivityListRef() {
+        return activityListRef;
+    }
+    
+    public InverseModelListRef<Event, Project> getEventListRef() {
+        return eventsListRef;
+    }
+    
+    public InverseModelListRef<Membership, Project> getMembershipListRef() {
+        return membershipListRef;
     }
     
     
