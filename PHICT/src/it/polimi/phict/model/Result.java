@@ -34,7 +34,7 @@ public class Result {
         this.overview = overview;
     }
 
-    public Boolean isImportant() {
+    public Boolean getImportant() {
         return important;
     }
     

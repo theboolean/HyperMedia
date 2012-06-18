@@ -117,7 +117,7 @@ public class Project {
             do {
                 while(activityResultIterator.hasNext()) {
                     Result result = activityResultIterator.next();
-                    if (result.isImportant()) {
+                    if (result.getImportant()) {
                         current = result;
                         return true;
                     }
