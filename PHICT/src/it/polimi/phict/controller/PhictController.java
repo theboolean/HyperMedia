@@ -21,7 +21,17 @@ public abstract class PhictController extends Controller {
     
     @Override
     public Navigation handleError(Throwable throwable) {
-        errorQueue.enqueue(throwable.getMessage());
+        String message = throwable.getMessage();
+        
+        if (message == null || message.equals("")) {
+            errorQueue.enqueue("An exception of type " + throwable.getClass().getName() + " was thrown.");
+            for(StackTraceElement elem : throwable.getStackTrace()) {
+                errorQueue.enqueue(elem.toString());
+            }
+        } else {
+            errorQueue.enqueue(message);
+        }
+        
         return forward("/error");
     }
     
@@ -40,6 +50,7 @@ public abstract class PhictController extends Controller {
     }
     
     protected Navigation reportValidationErrors(Errors errors) {
+        errorQueue.enqueue("Some parameters were not correctly specified:");
         for(int i = 0; i < errors.size(); i++) {
             errorQueue.enqueue(errors.get(i));
         }

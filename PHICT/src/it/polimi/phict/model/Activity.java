@@ -14,10 +14,8 @@ public class Activity {
     @Attribute(primaryKey = true)
     private Key id;
 
-    @Attribute(persistent = false)
     private ModelRef<Project> projectRef = new ModelRef<Project>(Project.class);
     
-    @Attribute(persistent = false)
     private InverseModelListRef<Result, Activity> resultListRef =
         new InverseModelListRef<Result, Activity>(Result.class, "activityRef", this);
     

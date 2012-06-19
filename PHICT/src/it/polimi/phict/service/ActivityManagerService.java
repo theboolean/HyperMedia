@@ -10,6 +10,7 @@ import com.google.appengine.api.datastore.Transaction;
 
 import it.polimi.phict.meta.ActivityMeta;
 import it.polimi.phict.model.Activity;
+import it.polimi.phict.model.Project;
 
 public class ActivityManagerService extends ModelManagerService<Activity> {
     private static ActivityManagerService instance;
@@ -30,10 +31,13 @@ public class ActivityManagerService extends ModelManagerService<Activity> {
         Activity activity = new Activity();
         BeanUtil.copy(rawData, activity);
         
-        activity.getProjectRef().setModel(ProjectManagerService.get().select((Key)rawData.get("project")));
+        Project project = ProjectManagerService.get().select((Key)rawData.get("project"));
+        
+        activity.getProjectRef().setModel(project);
         
         Transaction transaction = Datastore.beginTransaction();
         Datastore.put(activity);
+        Datastore.put(project, activity);
         transaction.commit();
         
         return activity;

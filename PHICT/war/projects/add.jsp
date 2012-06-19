@@ -9,7 +9,7 @@
 <title>projects Add</title>
 </head>
 <body>
-    <form name="addProject" action="new">
+    <form name="addProject" action="new" method="POST">
         Name: <input name="name" type="text" /> <br>
         Description: <input name="description" type="text" /> <br>
         Main Goals: <input name="mainGoals" type="text" /> <br>
