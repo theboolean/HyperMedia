@@ -1,10 +1,8 @@
 package it.polimi.phict.service;
 
-import java.util.List;
 import java.util.Map;
 
 import org.slim3.datastore.Datastore;
-import org.slim3.datastore.EntityNotFoundRuntimeException;
 import org.slim3.util.BeanUtil;
 
 import com.google.appengine.api.datastore.Key;
@@ -13,7 +11,7 @@ import com.google.appengine.api.datastore.Transaction;
 import it.polimi.phict.meta.ProjectMeta;
 import it.polimi.phict.model.Project;
 
-public class ProjectManagerService {
+public class ProjectManagerService extends ModelManagerService<Project> {
     private static ProjectManagerService instance;
     
     public static synchronized ProjectManagerService get() {
@@ -24,7 +22,9 @@ public class ProjectManagerService {
         return (instance = new ProjectManagerService());
     }
     
-    private ProjectManagerService() { }
+    private ProjectManagerService() { 
+        super(Project.class, ProjectMeta.get());
+    }
     
     public Project create(Map<String, Object> rawData) {
         Project project = new Project();
@@ -36,19 +36,5 @@ public class ProjectManagerService {
         
         project.setId(key);
         return project;
-    }
-    
-    public Project select(Key key) {
-        try {
-            return Datastore.get(Project.class, key);  
-        } catch (EntityNotFoundRuntimeException enfrex) {
-            return null;
-        } catch (IllegalArgumentException iaex) {
-            return null;
-        }
-    }
-    
-    public List<Project> selectAll() {
-        return Datastore.query(ProjectMeta.get()).asList();
     }
 }

@@ -10,6 +10,12 @@
 </head>
 <body>
     <h1> ${f:h(project.name)} </h1>
-     ${f:h(project.description)}
+    ${f:h(project.description)}
+    
+    <br />
+    <br />
+    Semantic links: <br />
+    
+    <a href="/activities/show?project=${f:h(projectKey)}" title="Activities for this project">Activities</a>
 </body>
 </html>

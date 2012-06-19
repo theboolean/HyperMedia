@@ -1,19 +1,15 @@
 package it.polimi.phict.controller.projects;
 
+import it.polimi.phict.controller.PhictController;
 import it.polimi.phict.meta.ProjectMeta;
-import it.polimi.phict.model.Project;
-import it.polimi.phict.service.ErrorQueueService;
 import it.polimi.phict.service.ProjectManagerService;
 
-import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
-import org.slim3.controller.validator.Errors;
 import org.slim3.controller.validator.Validators;
 import org.slim3.util.RequestMap;
 
-public class NewController extends Controller {
+public class NewController extends PhictController {
     private ProjectManagerService projectManager = ProjectManagerService.get();
-    private ErrorQueueService errorQueue = ErrorQueueService.get();
     
     @Override
     public Navigation run() throws Exception {
@@ -25,17 +21,11 @@ public class NewController extends Controller {
         validators.add(meta.mainGoals, validators.required());
         
         if (!validators.validate()) {
-            Errors errors = validators.getErrors();
-            
-            for(int i = 0; i < errors.size(); i++) {
-                errorQueue.enqueue(errors.get(i));
-            }
-            
-            return forward("/error");
+            return reportValidationErrors(validators.getErrors());
         }
         
-        Project result = projectManager.create(new RequestMap(request));
+        projectManager.create(new RequestMap(request));
         
-        return forward("show?key=" + result.getId());
+        return forward("show");
     }
 }
