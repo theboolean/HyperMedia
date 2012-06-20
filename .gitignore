@@ -5,6 +5,8 @@ desktop.ini
 .org.eclipse.jtd.*.prefs
 swt.jar
 swt-debug.jar
-.classpath
+*.classpath
 PHICT/war/WEB-INF/classes/*.class
 PHICT/war/WEB-INF/classes/lib/*
+PHICT/war/WEB-INF/lib/*
+PHICT/.settings/*
