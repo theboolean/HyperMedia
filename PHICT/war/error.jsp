@@ -9,7 +9,7 @@
 <title>Error</title>
 </head>
 <body>
-    <c:forEach var="error" items="${errors}">
+    <c:forEach var="error" items="${messages}">
         ${f:h(error)} <br>
     </c:forEach>
 </body>

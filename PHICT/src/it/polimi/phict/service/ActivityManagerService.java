@@ -37,7 +37,6 @@ public class ActivityManagerService extends ModelManagerService<Activity> {
         
         Transaction transaction = Datastore.beginTransaction();
         Datastore.put(activity);
-        Datastore.put(project, activity);
         transaction.commit();
         
         return activity;
