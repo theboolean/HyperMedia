@@ -11,6 +11,7 @@
 </head>
 <body>
 	<c:forEach var="activity" items="${projectActivities}">
+	    ${f:h(activity.goals)}  
 	    ${f:h(activity.schedule)}  
 	    <br> <br>
     </c:forEach>

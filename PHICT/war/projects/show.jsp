@@ -17,6 +17,7 @@
     <br />
     Semantic links: <br />
     
-    <a href="/activities/show?project=${f:h(projectKey)}" title="Activities for this project">Activities</a>
+    <a href="/activities/show?project=${f:h(projectKey)}" title="Activities for this project">Activities</a><br />
+    <a href="/events/show?project=${f:h(projectKey)}" title="Events for this project">Events</a>
 </body>
 </html>
