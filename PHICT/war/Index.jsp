@@ -6,9 +6,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
 <title>Index</title>
 </head>
 <body>
+<div id="header">
+	<img src="/images/logo.jpg" height="100px" width="200px" />
+	PHICT Program
+</div>
+
+<div class="breadcrumb">
+  <span class="left"></span>
+    <ul>
+      <li><a href="#EUCommission">EU Commission</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#ResearchThemes">Research Themes</a></li>
+      <li><a href="#history" class="last">History</a></li>
+	</ul>
+  <span class="right"></span>
+</div>
+
 <p>Hello Index !!!</p>
 </body>
 </html>

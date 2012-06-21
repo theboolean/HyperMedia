@@ -6,14 +6,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
 <title>projects Add</title>
 </head>
 <body>
     <form name="addProject" action="new" method="POST">
-        Name: <input name="name" type="text" /> <br>
-        Description: <input name="description" type="text" /> <br>
-        Main Goals: <input name="mainGoals" type="text" /> <br>
-        <input type="submit" value="Add" />
+    	<div class="add">
+    	<center>Add a new project <br /><br /></center>
+	        Name: <input name="name" class="addtxt" type="text" /> <br /><br />
+	        Description: <input name="description" class="addtxt" type="text" /> <br /><br />
+	        Main Goals: <input name="mainGoals" class="addtxt" type="text" /> <br /><br />
+	        <input type="submit" value="Add" />
+    	</div>
     </form>
 </body>
 </html>

@@ -1,0 +1,145 @@
+body {
+	font-family: "lucida grande", Tahoma, Verdana, Helvetica, Arial,
+		sans-serif;
+	font-size: 0.9em;
+	width: 980px;
+	margin: auto;
+	background-color: #EEE;
+	border: 1px solid #222;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 2px;
+}
+
+img {
+	border: none;
+}
+
+.handCursor {
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.toRight {
+	float: right;
+}
+
+.toLeft {
+	float: left;
+}
+
+#header {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 3em;
+	color: #003d87;
+}
+
+.add {
+	background-color: #DDD;
+	float: left;
+	border: solid 1px #222;
+	border-radius: 5px;
+	box-shadow: #555 0.2em 0.2em 0.3em;
+	padding: 10px;
+}
+
+.addtxt {
+	float: right;
+	width: 15em;
+	background: #FFF;
+	border: 1px solid #888;
+	border-radius: 4px;
+	color: #333;
+	height: 20px;
+	line-height: 15px;
+	width: 170px;
+	margin-bottom: 3px;
+	padding: 1px 2px 1px 2px;
+}
+
+.clear {
+	clear: both;
+}
+
+.footerTxt {
+	color: #000000;
+	font-family: "lucida grande", tahoma, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+}
+
+/* BreadCrumb Fixed Menu */
+.breadcrumb {
+	position: relative;
+	height: 30px;
+	width: 100%;
+}
+
+.breadcrumb ul {
+	position: relative;
+	margin: 0 5px 0 5px;
+	padding: 0;
+	height: 30px;
+	background: url('/images/breadcrumbImage.png') 0px -30px repeat-x;
+}
+
+.breadcrumb ul li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	float: left;
+	height: 30px display:inline;
+}
+
+.breadcrumb ul li a {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	line-height: 30px;
+	display: block;
+	background: url('/images/breadcrumbImage.png') 100% -60px no-repeat;
+	padding: 0 17px 0 15px;
+}
+
+.breadcrumb ul li a:hover {
+	text-decoration: underline;
+	color: rbg(0, 0, 0);
+}
+
+.breadcrumb ul li a.active {
+	background: none;
+	color: rgb(14, 18, 87);
+}
+
+.breadcrumb ul li a.last {
+	background: none;
+}
+
+.breadcrumb ul li a.active:hover {
+	text-decoration: none;
+}
+
+.breadcrumb .left {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 10px;
+	height: 30px;
+	display: block;
+	z-index: 1;
+	background: url('/images/breadcrumbImage.png') 0% 0px no-repeat;
+}
+
+.breadcrumb .right {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 10px;
+	height: 30px;
+	display: block;
+	z-index: 1;
+	background: url('/images/breadcrumbImage.png') 100% -90px no-repeat;
+}
