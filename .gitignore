@@ -10,3 +10,4 @@ PHICT/war/WEB-INF/classes/*.class
 PHICT/war/WEB-INF/classes/lib/*
 PHICT/war/WEB-INF/lib/*
 PHICT/.settings/*
+*.class

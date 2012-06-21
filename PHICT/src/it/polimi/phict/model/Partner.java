@@ -21,6 +21,7 @@ public class Partner {
     private InverseModelListRef<Researcher, Partner> researcherListRef = 
             new InverseModelListRef<Researcher, Partner>(Researcher.class, "partnerRef", this);
     
+    //TODO aggiungere name?
     private String description;
 
     public Key getId() {
