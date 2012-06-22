@@ -11,7 +11,6 @@ public class Result {
     @Attribute(primaryKey = true)
     private Key id;
 
-    @Attribute(persistent = false)
     private ModelRef<Activity> activityRef = new ModelRef<Activity>(
         Activity.class);
 

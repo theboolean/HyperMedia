@@ -1,11 +1,17 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:40:29")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:53:20")
 /** */
 public final class MembershipMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Membership> {
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Membership, com.google.appengine.api.datastore.Key> id = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Membership, com.google.appengine.api.datastore.Key>(this, "__key__", "id", com.google.appengine.api.datastore.Key.class);
+
+    /** */
+    public final org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Membership, org.slim3.datastore.ModelRef<it.polimi.phict.model.Partner>, it.polimi.phict.model.Partner> partnerRef = new org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Membership, org.slim3.datastore.ModelRef<it.polimi.phict.model.Partner>, it.polimi.phict.model.Partner>(this, "partnerRef", "partnerRef", org.slim3.datastore.ModelRef.class, it.polimi.phict.model.Partner.class);
+
+    /** */
+    public final org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Membership, org.slim3.datastore.ModelRef<it.polimi.phict.model.Project>, it.polimi.phict.model.Project> projectRef = new org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Membership, org.slim3.datastore.ModelRef<it.polimi.phict.model.Project>, it.polimi.phict.model.Project>(this, "projectRef", "projectRef", org.slim3.datastore.ModelRef.class, it.polimi.phict.model.Project.class);
 
     private static final MembershipMeta slim3_singleton = new MembershipMeta();
 
@@ -25,6 +31,14 @@ public final class MembershipMeta extends org.slim3.datastore.ModelMeta<it.polim
     public it.polimi.phict.model.Membership entityToModel(com.google.appengine.api.datastore.Entity entity) {
         it.polimi.phict.model.Membership model = new it.polimi.phict.model.Membership();
         model.setId(entity.getKey());
+        if (model.getPartnerRef() == null) {
+            throw new NullPointerException("The property(partnerRef) is null.");
+        }
+        model.getPartnerRef().setKey((com.google.appengine.api.datastore.Key) entity.getProperty("partnerRef"));
+        if (model.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) is null.");
+        }
+        model.getProjectRef().setKey((com.google.appengine.api.datastore.Key) entity.getProperty("projectRef"));
         return model;
     }
 
@@ -37,6 +51,14 @@ public final class MembershipMeta extends org.slim3.datastore.ModelMeta<it.polim
         } else {
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
+        if (m.getPartnerRef() == null) {
+            throw new NullPointerException("The property(partnerRef) must not be null.");
+        }
+        entity.setProperty("partnerRef", m.getPartnerRef().getKey());
+        if (m.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) must not be null.");
+        }
+        entity.setProperty("projectRef", m.getProjectRef().getKey());
         return entity;
     }
 
@@ -60,6 +82,15 @@ public final class MembershipMeta extends org.slim3.datastore.ModelMeta<it.polim
 
     @Override
     protected void assignKeyToModelRefIfNecessary(com.google.appengine.api.datastore.AsyncDatastoreService ds, java.lang.Object model) {
+        it.polimi.phict.model.Membership m = (it.polimi.phict.model.Membership) model;
+        if (m.getPartnerRef() == null) {
+            throw new NullPointerException("The property(partnerRef) must not be null.");
+        }
+        m.getPartnerRef().assignKeyIfNecessary(ds);
+        if (m.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) must not be null.");
+        }
+        m.getProjectRef().assignKeyIfNecessary(ds);
     }
 
     @Override

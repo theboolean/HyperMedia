@@ -11,7 +11,6 @@ public class Event {
     @Attribute(primaryKey = true)
     private Key id;
 
-    @Attribute(persistent = false)
     private ModelRef<Project> projectRef = new ModelRef<Project>(Project.class);
 
     private String presentation;

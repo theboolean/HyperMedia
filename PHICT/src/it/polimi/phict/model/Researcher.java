@@ -11,7 +11,6 @@ public class Researcher {
     @Attribute(primaryKey = true)
     private Key id;
 
-    @Attribute(persistent = false)
     private ModelRef<Partner> partnerRef = new ModelRef<Partner>(Partner.class);
 
     private String curriculum;

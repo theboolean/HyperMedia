@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:40:29")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:53:26")
 /** */
 public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Event> {
 
@@ -9,6 +9,9 @@ public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phi
 
     /** */
     public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Event> presentation = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Event>(this, "presentation", "presentation");
+
+    /** */
+    public final org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Event, org.slim3.datastore.ModelRef<it.polimi.phict.model.Project>, it.polimi.phict.model.Project> projectRef = new org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Event, org.slim3.datastore.ModelRef<it.polimi.phict.model.Project>, it.polimi.phict.model.Project>(this, "projectRef", "projectRef", org.slim3.datastore.ModelRef.class, it.polimi.phict.model.Project.class);
 
     private static final EventMeta slim3_singleton = new EventMeta();
 
@@ -29,6 +32,10 @@ public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phi
         it.polimi.phict.model.Event model = new it.polimi.phict.model.Event();
         model.setId(entity.getKey());
         model.setPresentation((java.lang.String) entity.getProperty("presentation"));
+        if (model.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) is null.");
+        }
+        model.getProjectRef().setKey((com.google.appengine.api.datastore.Key) entity.getProperty("projectRef"));
         return model;
     }
 
@@ -42,6 +49,10 @@ public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phi
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
         entity.setProperty("presentation", m.getPresentation());
+        if (m.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) must not be null.");
+        }
+        entity.setProperty("projectRef", m.getProjectRef().getKey());
         return entity;
     }
 
@@ -65,6 +76,11 @@ public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phi
 
     @Override
     protected void assignKeyToModelRefIfNecessary(com.google.appengine.api.datastore.AsyncDatastoreService ds, java.lang.Object model) {
+        it.polimi.phict.model.Event m = (it.polimi.phict.model.Event) model;
+        if (m.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) must not be null.");
+        }
+        m.getProjectRef().assignKeyIfNecessary(ds);
     }
 
     @Override

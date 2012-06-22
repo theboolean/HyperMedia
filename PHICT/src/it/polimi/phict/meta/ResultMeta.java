@@ -1,8 +1,11 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:40:29")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:52:52")
 /** */
 public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Result> {
+
+    /** */
+    public final org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Result, org.slim3.datastore.ModelRef<it.polimi.phict.model.Activity>, it.polimi.phict.model.Activity> activityRef = new org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Result, org.slim3.datastore.ModelRef<it.polimi.phict.model.Activity>, it.polimi.phict.model.Activity>(this, "activityRef", "activityRef", org.slim3.datastore.ModelRef.class, it.polimi.phict.model.Activity.class);
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Result, com.google.appengine.api.datastore.Key> id = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Result, com.google.appengine.api.datastore.Key>(this, "__key__", "id", com.google.appengine.api.datastore.Key.class);
@@ -30,6 +33,10 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
     @Override
     public it.polimi.phict.model.Result entityToModel(com.google.appengine.api.datastore.Entity entity) {
         it.polimi.phict.model.Result model = new it.polimi.phict.model.Result();
+        if (model.getActivityRef() == null) {
+            throw new NullPointerException("The property(activityRef) is null.");
+        }
+        model.getActivityRef().setKey((com.google.appengine.api.datastore.Key) entity.getProperty("activityRef"));
         model.setId(entity.getKey());
         model.setImportant((java.lang.Boolean) entity.getProperty("important"));
         model.setOverview((java.lang.String) entity.getProperty("overview"));
@@ -45,6 +52,10 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
         } else {
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
+        if (m.getActivityRef() == null) {
+            throw new NullPointerException("The property(activityRef) must not be null.");
+        }
+        entity.setProperty("activityRef", m.getActivityRef().getKey());
         entity.setProperty("important", m.getImportant());
         entity.setProperty("overview", m.getOverview());
         return entity;
@@ -70,6 +81,11 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
 
     @Override
     protected void assignKeyToModelRefIfNecessary(com.google.appengine.api.datastore.AsyncDatastoreService ds, java.lang.Object model) {
+        it.polimi.phict.model.Result m = (it.polimi.phict.model.Result) model;
+        if (m.getActivityRef() == null) {
+            throw new NullPointerException("The property(activityRef) must not be null.");
+        }
+        m.getActivityRef().assignKeyIfNecessary(ds);
     }
 
     @Override
