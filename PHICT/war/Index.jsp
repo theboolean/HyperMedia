@@ -27,6 +27,16 @@
   <span class="right"></span>
 </div>
 
+<div class="dynBreadcrumb">
+  <span class="left"></span>
+    <ul>
+      <li><a href="#arg1">arg1</a></li>
+      <li><a href="#arg2">arg2</a></li>
+      <li><a href="#arg3" class="active">arg3</a></li>
+</ul>
+  <span class="right"></span>
+</div>
+
 <p>Hello Index !!!</p>
 </body>
 </html>

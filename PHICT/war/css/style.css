@@ -8,7 +8,7 @@ body {
 	border: 1px solid #222;
 	border-radius: 5px;
 	padding: 10px;
-	margin-top: 2px;
+	margin: 6px auto 6px auto;
 }
 
 img {
@@ -142,4 +142,73 @@ img {
 	display: block;
 	z-index: 1;
 	background: url('/images/breadcrumbImage.png') 100% -90px no-repeat;
+}
+
+.dynBreadcrumb {
+	position: relative;
+	height: 30px;
+	width: 100%;
+}
+
+.dynBreadcrumb ul {
+	position: relative;
+	margin: 0 5px 0 5px;
+	padding: 0;
+	height: 30px;
+	background: url('/images/dynBreadcrumbImage.png') 0px -30px repeat-x;
+}
+
+.dynBreadcrumb ul li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	float: left;
+	height: 30px display:inline;
+}
+
+.dynBreadcrumb ul li a {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: rgb(105, 105, 105);
+	text-decoration: none;
+	line-height: 30px;
+	display: block;
+	background: url('/images/dynBreadcrumbImage.png') 100% -60px no-repeat;
+	padding: 0 17px 0 15px;
+	outline: none;
+}
+
+.dynBreadcrumb ul li a:hover {
+	text-decoration: underline;
+	color: rgb(105, 105, 105);
+}
+
+.dynBreadcrumb ul li a.active {
+	background: none;
+	color: rgb(0, 0, 0);
+}
+
+.dynBreadcrumb ul li a.active:hover {
+	text-decoration: none;
+}
+
+.dynBreadcrumb .left {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 10px;
+	height: 30px;
+	display: block;
+	z-index: 1;
+	background: url('/images/dynBreadcrumbImage.png') 0% 0px no-repeat;
+}
+
+.dynBreadcrumb .right {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 10px;
+	height: 30px;
+	display: block;
+	z-index: 1;
+	background: url('/images/dynBreadcrumbImage.png') 100% -90px no-repeat;
 }
