@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 19:03:54")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:40:29")
 /** */
 public final class PartnerMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Partner> {
 
@@ -9,6 +9,9 @@ public final class PartnerMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Partner, com.google.appengine.api.datastore.Key> id = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Partner, com.google.appengine.api.datastore.Key>(this, "__key__", "id", com.google.appengine.api.datastore.Key.class);
+
+    /** */
+    public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Partner> name = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Partner>(this, "name", "name");
 
     private static final PartnerMeta slim3_singleton = new PartnerMeta();
 
@@ -29,6 +32,7 @@ public final class PartnerMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
         it.polimi.phict.model.Partner model = new it.polimi.phict.model.Partner();
         model.setDescription((java.lang.String) entity.getProperty("description"));
         model.setId(entity.getKey());
+        model.setName((java.lang.String) entity.getProperty("name"));
         return model;
     }
 
@@ -42,6 +46,7 @@ public final class PartnerMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
         entity.setProperty("description", m.getDescription());
+        entity.setProperty("name", m.getName());
         return entity;
     }
 
@@ -107,6 +112,10 @@ public final class PartnerMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
             writer.setNextPropertyName("id");
             encoder0.encode(writer, m.getId());
         }
+        if(m.getName() != null){
+            writer.setNextPropertyName("name");
+            encoder0.encode(writer, m.getName());
+        }
         writer.endObject();
     }
 
@@ -119,6 +128,8 @@ public final class PartnerMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
         m.setDescription(decoder0.decode(reader, m.getDescription()));
         reader = rootReader.newObjectReader("id");
         m.setId(decoder0.decode(reader, m.getId()));
+        reader = rootReader.newObjectReader("name");
+        m.setName(decoder0.decode(reader, m.getName()));
         return m;
     }
 }

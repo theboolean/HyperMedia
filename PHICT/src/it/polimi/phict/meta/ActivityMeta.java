@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 19:03:54")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:40:29")
 /** */
 public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Activity> {
 
@@ -9,6 +9,9 @@ public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Activity, com.google.appengine.api.datastore.Key> id = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Activity, com.google.appengine.api.datastore.Key>(this, "__key__", "id", com.google.appengine.api.datastore.Key.class);
+
+    /** */
+    public final org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Activity, org.slim3.datastore.ModelRef<it.polimi.phict.model.Project>, it.polimi.phict.model.Project> projectRef = new org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Activity, org.slim3.datastore.ModelRef<it.polimi.phict.model.Project>, it.polimi.phict.model.Project>(this, "projectRef", "projectRef", org.slim3.datastore.ModelRef.class, it.polimi.phict.model.Project.class);
 
     /** */
     public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Activity> schedule = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Activity>(this, "schedule", "schedule");
@@ -32,6 +35,10 @@ public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.
         it.polimi.phict.model.Activity model = new it.polimi.phict.model.Activity();
         model.setGoals((java.lang.String) entity.getProperty("goals"));
         model.setId(entity.getKey());
+        if (model.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) is null.");
+        }
+        model.getProjectRef().setKey((com.google.appengine.api.datastore.Key) entity.getProperty("projectRef"));
         model.setSchedule((java.lang.String) entity.getProperty("schedule"));
         return model;
     }
@@ -46,6 +53,10 @@ public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
         entity.setProperty("goals", m.getGoals());
+        if (m.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) must not be null.");
+        }
+        entity.setProperty("projectRef", m.getProjectRef().getKey());
         entity.setProperty("schedule", m.getSchedule());
         return entity;
     }
@@ -70,6 +81,11 @@ public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.
 
     @Override
     protected void assignKeyToModelRefIfNecessary(com.google.appengine.api.datastore.AsyncDatastoreService ds, java.lang.Object model) {
+        it.polimi.phict.model.Activity m = (it.polimi.phict.model.Activity) model;
+        if (m.getProjectRef() == null) {
+            throw new NullPointerException("The property(projectRef) must not be null.");
+        }
+        m.getProjectRef().assignKeyIfNecessary(ds);
     }
 
     @Override
@@ -112,6 +128,10 @@ public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.
             writer.setNextPropertyName("id");
             encoder0.encode(writer, m.getId());
         }
+        if(m.getProjectRef() != null && m.getProjectRef().getKey() != null){
+            writer.setNextPropertyName("projectRef");
+            encoder0.encode(writer, m.getProjectRef(), maxDepth, currentDepth);
+        }
         if(m.getSchedule() != null){
             writer.setNextPropertyName("schedule");
             encoder0.encode(writer, m.getSchedule());
@@ -129,7 +149,7 @@ public final class ActivityMeta extends org.slim3.datastore.ModelMeta<it.polimi.
         reader = rootReader.newObjectReader("id");
         m.setId(decoder0.decode(reader, m.getId()));
         reader = rootReader.newObjectReader("projectRef");
-        decoder0.decode(reader, (org.slim3.datastore.ModelRef)null, maxDepth, currentDepth);
+        decoder0.decode(reader, m.getProjectRef(), maxDepth, currentDepth);
         reader = rootReader.newObjectReader("schedule");
         m.setSchedule(decoder0.decode(reader, m.getSchedule()));
         return m;

@@ -11,7 +11,8 @@ import org.slim3.controller.validator.Validators;
 import org.slim3.util.RequestMap;
 
 public class NewController extends PhictController {
-    private static ResearcherManagerService researcherManager = ResearcherManagerService.get();
+    private static ResearcherManagerService researcherManager =
+        ResearcherManagerService.get();
 
     @Override
     public Navigation run() throws Exception {
@@ -29,7 +30,7 @@ public class NewController extends PhictController {
         String partnerKey = map.get("partner").toString();
         map.put("partner", asKey("partner"));
 
-        researcherManager.create(map);       
+        researcherManager.create(map);
         return forward("/partners/show?key=" + partnerKey);
     }
 }

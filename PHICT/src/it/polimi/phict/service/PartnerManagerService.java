@@ -1,7 +1,9 @@
 package it.polimi.phict.service;
 
 import it.polimi.phict.meta.PartnerMeta;
+import it.polimi.phict.model.Membership;
 import it.polimi.phict.model.Partner;
+import it.polimi.phict.model.Project;
 
 import java.util.Map;
 
@@ -30,11 +32,23 @@ public class PartnerManagerService extends ModelManagerService<Partner> {
         Partner partner = new Partner();
         BeanUtil.copy(rawData, partner);
 
-        Transaction transaction = Datastore.beginTransaction();
-        Key key = Datastore.put(partner);
-        transaction.commit();
+        Project project =
+            ProjectManagerService.get().select((Key) rawData.get("project"));
 
-        partner.setId(key);
+        Membership membership = new Membership();
+        membership.getPartnerRef().setModel(partner);
+        membership.getProjectRef().setModel(project);
+
+        Transaction transaction = Datastore.beginTransaction();
+        Key partnerkey = Datastore.put(partner);
+        transaction.commit();
+        partner.setId(partnerkey);
+
+        Transaction transaction2 = Datastore.beginTransaction();
+        Key membershipKey = Datastore.put(membership);
+        transaction2.commit();
+        membership.setId(membershipKey);
+
         return partner;
     }
 }

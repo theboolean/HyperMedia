@@ -2,14 +2,22 @@ package it.polimi.phict.controller.partners;
 
 import it.polimi.phict.controller.PhictController;
 import it.polimi.phict.model.Partner;
+import it.polimi.phict.model.Project;
 import it.polimi.phict.service.PartnerManagerService;
+import it.polimi.phict.service.ProjectManagerService;
+
+import java.util.List;
 
 import org.slim3.controller.Navigation;
 
 import com.google.appengine.api.datastore.Key;
 
 public class ShowController extends PhictController {
-    private static PartnerManagerService partnerManager = PartnerManagerService.get();
+    private static ProjectManagerService projectManager = ProjectManagerService
+        .get();
+
+    private static PartnerManagerService partnerManager = PartnerManagerService
+        .get();
 
     @Override
     public Navigation run() throws Exception {
@@ -28,8 +36,12 @@ public class ShowController extends PhictController {
     }
 
     private Navigation showProjectPartners(Key projectKey) {
-        // TODO
-        return forward("/index");
+        Project project = projectManager.select(projectKey);
+        List<Partner> projectPartners =
+            projectManager.getProjectPartners(project);
+        requestScope("project", project);
+        requestScope("projectPartners", projectPartners);
+        return forward("list.jsp");
     }
 
     private Navigation showPartners(Key partnersKey) {

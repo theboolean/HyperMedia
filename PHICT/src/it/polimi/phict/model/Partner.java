@@ -12,16 +12,23 @@ import com.google.appengine.api.datastore.Key;
 public class Partner {
     @Attribute(primaryKey = true)
     private Key id;
-    
-    @Attribute(persistent = false)
-    private InverseModelListRef<Membership, Partner> membershipListRef = 
-            new InverseModelListRef<Membership, Partner>(Membership.class, "partnerRef", this);
 
     @Attribute(persistent = false)
-    private InverseModelListRef<Researcher, Partner> researcherListRef = 
-            new InverseModelListRef<Researcher, Partner>(Researcher.class, "partnerRef", this);
-    
-    //TODO aggiungere name?
+    private InverseModelListRef<Membership, Partner> membershipListRef =
+        new InverseModelListRef<Membership, Partner>(
+            Membership.class,
+            "partnerRef",
+            this);
+
+    @Attribute(persistent = false)
+    private InverseModelListRef<Researcher, Partner> researcherListRef =
+        new InverseModelListRef<Researcher, Partner>(
+            Researcher.class,
+            "partnerRef",
+            this);
+
+    private String name;
+
     private String description;
 
     public Key getId() {
@@ -39,20 +46,27 @@ public class Partner {
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public List<Membership> getMemberships() {
         return membershipListRef.getModelList();
     }
-    
+
     public List<Researcher> getResearchers() {
         return researcherListRef.getModelList();
     }
-    
+
     public InverseModelListRef<Membership, Partner> getMembershipListRef() {
         return membershipListRef;
     }
-    
+
     public InverseModelListRef<Researcher, Partner> getResearcherListRef() {
         return researcherListRef;
     }

@@ -29,7 +29,7 @@ public class NewController extends PhictController {
         String prejectKey = map.get("project").toString();
         map.put("project", asKey("project"));
 
-        eventManager.create(map);       
+        eventManager.create(map);
         return forward("/projects/show?key=" + prejectKey);
     }
 }

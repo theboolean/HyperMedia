@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 19:03:54")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:40:29")
 /** */
 public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Researcher> {
 
@@ -107,6 +107,10 @@ public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polim
             writer.setNextPropertyName("id");
             encoder0.encode(writer, m.getId());
         }
+        if(m.getPartnerRef() != null && m.getPartnerRef().getKey() != null){
+            writer.setNextPropertyName("partnerRef");
+            encoder0.encode(writer, m.getPartnerRef(), maxDepth, currentDepth);
+        }
         writer.endObject();
     }
 
@@ -120,7 +124,7 @@ public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polim
         reader = rootReader.newObjectReader("id");
         m.setId(decoder0.decode(reader, m.getId()));
         reader = rootReader.newObjectReader("partnerRef");
-        decoder0.decode(reader, (org.slim3.datastore.ModelRef)null, maxDepth, currentDepth);
+        decoder0.decode(reader, m.getPartnerRef(), maxDepth, currentDepth);
         return m;
     }
 }

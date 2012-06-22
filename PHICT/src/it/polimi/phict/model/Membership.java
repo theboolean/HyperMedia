@@ -10,10 +10,10 @@ import com.google.appengine.api.datastore.Key;
 public class Membership {
     @Attribute(primaryKey = true)
     private Key id;
-    
+
     @Attribute(persistent = false)
     private ModelRef<Partner> partnerRef = new ModelRef<Partner>(Partner.class);
-    
+
     @Attribute(persistent = false)
     private ModelRef<Project> projectRef = new ModelRef<Project>(Project.class);
 
@@ -25,7 +25,6 @@ public class Membership {
         this.id = id;
     }
 
-    
     public Partner getPartner() {
         return partnerRef.getModel();
     }
@@ -33,11 +32,11 @@ public class Membership {
     public Project getProject() {
         return projectRef.getModel();
     }
-    
+
     public ModelRef<Partner> getPartnerRef() {
         return partnerRef;
     }
-    
+
     public ModelRef<Project> getProjectRef() {
         return projectRef;
     }

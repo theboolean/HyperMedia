@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 19:03:54")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:40:29")
 /** */
 public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Event> {
 
@@ -107,6 +107,10 @@ public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phi
             writer.setNextPropertyName("presentation");
             encoder0.encode(writer, m.getPresentation());
         }
+        if(m.getProjectRef() != null && m.getProjectRef().getKey() != null){
+            writer.setNextPropertyName("projectRef");
+            encoder0.encode(writer, m.getProjectRef(), maxDepth, currentDepth);
+        }
         writer.endObject();
     }
 
@@ -120,7 +124,7 @@ public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phi
         reader = rootReader.newObjectReader("presentation");
         m.setPresentation(decoder0.decode(reader, m.getPresentation()));
         reader = rootReader.newObjectReader("projectRef");
-        decoder0.decode(reader, (org.slim3.datastore.ModelRef)null, maxDepth, currentDepth);
+        decoder0.decode(reader, m.getProjectRef(), maxDepth, currentDepth);
         return m;
     }
 }

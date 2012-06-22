@@ -10,12 +10,12 @@ import com.google.appengine.api.datastore.Key;
 public class Event {
     @Attribute(primaryKey = true)
     private Key id;
-    
+
     @Attribute(persistent = false)
     private ModelRef<Project> projectRef = new ModelRef<Project>(Project.class);
 
     private String presentation;
-    
+
     public Key getId() {
         return id;
     }
@@ -32,11 +32,10 @@ public class Event {
         this.presentation = presentation;
     }
 
-    
     public Project getProject() {
         return projectRef.getModel();
     }
-    
+
     public ModelRef<Project> getProjectRef() {
         return projectRef;
     }

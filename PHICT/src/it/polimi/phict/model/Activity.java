@@ -15,13 +15,16 @@ public class Activity {
     private Key id;
 
     private ModelRef<Project> projectRef = new ModelRef<Project>(Project.class);
-    
+
+    @Attribute(persistent = false)
     private InverseModelListRef<Result, Activity> resultListRef =
-        new InverseModelListRef<Result, Activity>(Result.class, "activityRef", this);
-    
+        new InverseModelListRef<Result, Activity>(
+            Result.class,
+            "activityRef",
+            this);
+
     private String goals, schedule;
-    
-    
+
     public Key getId() {
         return id;
     }
@@ -45,20 +48,19 @@ public class Activity {
     public void setSchedule(String schedule) {
         this.schedule = schedule;
     }
-    
-    
+
     public List<Result> getResults() {
         return resultListRef.getModelList();
     }
-    
+
     public Project getProject() {
         return projectRef.getModel();
     }
-    
+
     public InverseModelListRef<Result, Activity> getResultListRef() {
         return resultListRef;
     }
-    
+
     public ModelRef<Project> getProjectRef() {
         return projectRef;
     }

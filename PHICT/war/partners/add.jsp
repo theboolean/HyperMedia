@@ -19,8 +19,9 @@
 	                <option value="${f:h(project.id)}">${f:h(project.name)}</option>
 	            </c:forEach>
 	        </select> <br /><br />
+	        Name: <input name="name" class="addtxt" type="text" /> <br /><br />
 	        Description: <input name="description" class="addtxt" type="text" /> <br /><br />
-	        
+
 	        <input type="submit" value="Submit" />    	</div>
     </form>
 </body>

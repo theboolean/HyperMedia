@@ -10,10 +10,10 @@ import com.google.appengine.api.datastore.Key;
 public class Researcher {
     @Attribute(primaryKey = true)
     private Key id;
-    
+
     @Attribute(persistent = false)
     private ModelRef<Partner> partnerRef = new ModelRef<Partner>(Partner.class);
-    
+
     private String curriculum;
 
     public String getCurriculum() {
@@ -23,12 +23,11 @@ public class Researcher {
     public void setCurriculum(String curriculum) {
         this.curriculum = curriculum;
     }
-    
-    
+
     public Partner getPartner() {
         return partnerRef.getModel();
     }
-    
+
     public ModelRef<Partner> getPartnerRef() {
         return partnerRef;
     }

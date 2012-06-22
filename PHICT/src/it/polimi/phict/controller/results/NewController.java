@@ -11,7 +11,8 @@ import org.slim3.controller.validator.Validators;
 import org.slim3.util.RequestMap;
 
 public class NewController extends PhictController {
-    private static ReusltManagerService resultManager = ReusltManagerService.get();
+    private static ReusltManagerService resultManager = ReusltManagerService
+        .get();
 
     @Override
     public Navigation run() throws Exception {
@@ -29,7 +30,7 @@ public class NewController extends PhictController {
         String activityKey = map.get("activity").toString();
         map.put("activity", asKey("activity"));
 
-        resultManager.create(map);       
+        resultManager.create(map);
         return forward("/activities/show?key=" + activityKey);
     }
 }

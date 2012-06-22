@@ -11,7 +11,8 @@ import org.slim3.controller.validator.Validators;
 import org.slim3.util.RequestMap;
 
 public class NewController extends PhictController {
-    private static PartnerManagerService partnerManager = PartnerManagerService.get();
+    private static PartnerManagerService partnerManager = PartnerManagerService
+        .get();
 
     @Override
     public Navigation run() throws Exception {
@@ -19,6 +20,7 @@ public class NewController extends PhictController {
         PartnerMeta meta = PartnerMeta.get();
 
         validators.add("project", validators.required());
+        validators.add(meta.name, validators.required());
         validators.add(meta.description, validators.required());
 
         if (!validators.validate()) {
@@ -29,9 +31,6 @@ public class NewController extends PhictController {
         String prejectKey = map.get("project").toString();
         map.put("project", asKey("project"));
 
-        // TODO aggiunge riferimento in membreship
-        // qui o in PartenrManagerService ???
-        
         partnerManager.create(map);
         return forward("/projects/show?key=" + prejectKey);
     }

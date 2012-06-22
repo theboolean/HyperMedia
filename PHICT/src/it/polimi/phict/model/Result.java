@@ -10,10 +10,11 @@ import com.google.appengine.api.datastore.Key;
 public class Result {
     @Attribute(primaryKey = true)
     private Key id;
-    
+
     @Attribute(persistent = false)
-    private ModelRef<Activity> activityRef = new ModelRef<Activity>(Activity.class);
-    
+    private ModelRef<Activity> activityRef = new ModelRef<Activity>(
+        Activity.class);
+
     private String overview;
     private Boolean important;
 
@@ -36,20 +37,19 @@ public class Result {
     public Boolean getImportant() {
         return important;
     }
-    
+
     public void setImportant(Boolean important) {
         this.important = important;
     }
-    
-    
+
     public Activity getActivity() {
         return activityRef.getModel();
     }
-    
+
     public Project getProject() {
         return activityRef.getModel().getProject();
     }
-    
+
     public ModelRef<Activity> getActivityRef() {
         return activityRef;
     }

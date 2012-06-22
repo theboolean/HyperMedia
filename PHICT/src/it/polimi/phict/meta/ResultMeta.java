@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-15 19:03:54")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:40:29")
 /** */
 public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Result> {
 
@@ -104,6 +104,10 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
         it.polimi.phict.model.Result m = (it.polimi.phict.model.Result) model;
         writer.beginObject();
         org.slim3.datastore.json.Default encoder0 = new org.slim3.datastore.json.Default();
+        if(m.getActivityRef() != null && m.getActivityRef().getKey() != null){
+            writer.setNextPropertyName("activityRef");
+            encoder0.encode(writer, m.getActivityRef(), maxDepth, currentDepth);
+        }
         if(m.getId() != null){
             writer.setNextPropertyName("id");
             encoder0.encode(writer, m.getId());
@@ -125,7 +129,7 @@ public final class ResultMeta extends org.slim3.datastore.ModelMeta<it.polimi.ph
         org.slim3.datastore.json.JsonReader reader = null;
         org.slim3.datastore.json.Default decoder0 = new org.slim3.datastore.json.Default();
         reader = rootReader.newObjectReader("activityRef");
-        decoder0.decode(reader, (org.slim3.datastore.ModelRef)null, maxDepth, currentDepth);
+        decoder0.decode(reader, m.getActivityRef(), maxDepth, currentDepth);
         reader = rootReader.newObjectReader("id");
         m.setId(decoder0.decode(reader, m.getId()));
         reader = rootReader.newObjectReader("important");
