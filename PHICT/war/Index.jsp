@@ -20,7 +20,7 @@
     <ul>
       <li><a href="#EUCommission">EU Commission</a></li>
       <li><a href="#results">Results</a></li>
-      <li><a href="#partners">Partners</a></li>
+      <li><a href="/partners/">Partners</a></li>
       <li><a href="#ResearchThemes">Research Themes</a></li>
       <li><a href="#history" class="last">History</a></li>
 	</ul>

@@ -11,9 +11,12 @@
 </head>
 <body>
 	<c:forEach var="partner" items="${projectPartners}">
-	    <h1> <a href="show?key=${f:h(partner.name)}" title="Go to partner's home"> </a> </h1>
-	    ${f:h(partner.name)}
-	    <br> <br>
-    </c:forEach>
+		<h2>
+			<a href="/partners/show?key=${f:h(partner.id)}"
+				title="Go to partner's home"> ${f:h(partner.name)}</a>
+		</h2>
+			${f:h(partner.description)} <br>
+		<br>
+	</c:forEach>
 </body>
 </html>

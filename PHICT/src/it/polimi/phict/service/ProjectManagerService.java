@@ -47,9 +47,9 @@ public class ProjectManagerService extends ModelManagerService<Project> {
             Datastore.query(Membership.class).asList();
         List<Partner> partners = new ArrayList<Partner>();
         for (Membership m : membership) {
-            // if(m.getProject().getId().equals(project.getId())){
-            partners.add(m.getPartner());
-            // }
+            if (m.getProject().getId().equals(project.getId())) {
+                partners.add(m.getPartner());
+            }
         }
         return partners;
     }

@@ -22,7 +22,9 @@
 	        
 	        Overview: <input name="overview" class="addtxt" type="text" /> <br /><br />
 	        
-	        <!-- TODO aggiungere anche ceckbox important? -->
+	        Important:  
+	        <input type="radio" name="important" value="true"> yes
+			<input type="radio" name="important" value="false" checked> no<br>
 	        
 	        <input type="submit" value="Submit" />
         </div>

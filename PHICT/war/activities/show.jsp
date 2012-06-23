@@ -7,9 +7,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<title>activities Show</title>
+<title>activity Show</title>
 </head>
 <body>
-<p>Hello activities Show !!!</p>
+	<p>${f:h(activity.schedule)}<br />
+	${f:h(activity.goals)}</p>
+	<br />Semantic links:
+	<br />
+	<a href="/results/show?activity=${f:h(activityKey)}"
+		title="Results of this activity">Results</a>
+	<br />
 </body>
 </html>

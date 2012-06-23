@@ -11,9 +11,13 @@
 </head>
 <body>
 	<c:forEach var="activity" items="${projectActivities}">
-	    ${f:h(activity.goals)}  
-	    ${f:h(activity.schedule)}  
-	    <br> <br>
-    </c:forEach>
+		<h2>
+			<a href="/activities/show?key=${f:h(activity.id)}"
+				title="Go to activity's home"> ${f:h(activity.goals)}</a>
+		</h2>
+		    ${f:h(activity.schedule)}  
+		    <br>
+		<br>
+	</c:forEach>
 </body>
 </html>

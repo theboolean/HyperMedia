@@ -10,6 +10,16 @@
 <title>partners Show</title>
 </head>
 <body>
-<p>Hello partners Show !!!</p>
+	<h1>${f:h(partner.name)}</h1>
+	${f:h(partner.description)}
+	<br />
+	<br /> Semantic links:
+	<br />
+
+	<a href="/researchers/show?partner=${f:h(partnerKey)}"
+		title="Researchers of this partner">Researchers</a>
+	<br />
+	<a href="/projects/show?partner=${f:h(partnerKey)}"
+		title="Projects of this partner">Projects</a>
 </body>
 </html>

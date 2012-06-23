@@ -28,7 +28,7 @@ public class ShowController extends PhictController {
 
         if (requestParameterExists("key")) {
             Key partnersKey = parseKeyParameter("key");
-            return showPartners(partnersKey);
+            return showPartner(partnersKey);
         }
 
         throw new QueryException(
@@ -44,9 +44,11 @@ public class ShowController extends PhictController {
         return forward("list.jsp");
     }
 
-    private Navigation showPartners(Key partnersKey) {
-        Partner researcher = partnerManager.select(partnersKey);
-        requestScope("researcher", researcher);
+    private Navigation showPartner(Key partnersKey) {
+        Partner partner = partnerManager.select(partnersKey);
+        requestScope("partner", partner);
+        requestScope("partnerKey", partner.getId());
+
         return forward("show.jsp");
     }
 }

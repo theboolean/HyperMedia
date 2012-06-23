@@ -16,9 +16,8 @@
 	        Partner:
 	        <select name="partner" class="addtxt">
 	            <c:forEach var="partner" items="${partners}">
-	                <option value="${f:h(partner.id)}">${f:h(partner.description)}</option>
+	                <option value="${f:h(partner.id)}">${f:h(partner.name)}</option>
 	            </c:forEach>
-	           <-- TODO se aggiungaimo partners.name modificare qui sopra description in name -->
 	        </select> <br /><br />
 	        
 	        Curriculum: <input name="curriculum" class="addtxt" type="text" /> <br /><br />

@@ -45,6 +45,7 @@ public class ShowController extends PhictController {
     private Navigation showActivity(Key key) {
         Activity activity = activityManager.select(key);
         requestScope("activity", activity);
+        requestScope("activityKey", activity.getId());
         return forward("show.jsp");
     }
 }

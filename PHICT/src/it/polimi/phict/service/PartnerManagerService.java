@@ -5,6 +5,8 @@ import it.polimi.phict.model.Membership;
 import it.polimi.phict.model.Partner;
 import it.polimi.phict.model.Project;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.slim3.datastore.Datastore;
@@ -50,5 +52,17 @@ public class PartnerManagerService extends ModelManagerService<Partner> {
         membership.setId(membershipKey);
 
         return partner;
+    }
+
+    public List<Project> getPartnersProjects(Key partnerKey) {
+        List<Membership> membership =
+            Datastore.query(Membership.class).asList();
+        List<Project> project = new ArrayList<Project>();
+        for (Membership m : membership) {
+            if (m.getPartner().getId().equals(partnerKey)) {
+                project.add(m.getProject());
+            }
+        }
+        return project;
     }
 }

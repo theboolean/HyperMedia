@@ -21,6 +21,7 @@ public class NewController extends PhictController {
 
         validators.add("activity", validators.required());
         validators.add(meta.overview, validators.required());
+        validators.add(meta.important, validators.required());
 
         if (!validators.validate()) {
             return reportValidationErrors(validators.getErrors());

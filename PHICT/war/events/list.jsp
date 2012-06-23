@@ -11,8 +11,9 @@
 </head>
 <body>
 	<c:forEach var="event" items="${projectEvents}">
-	    ${f:h(event.presentation)}  
-	    <br> <br>
-    </c:forEach>
+		${f:h(event.presentation)}
+		<br>
+		<br>
+	</c:forEach>
 </body>
 </html>

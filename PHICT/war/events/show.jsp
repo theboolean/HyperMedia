@@ -7,9 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<title>events Show</title>
+<title>event Show</title>
 </head>
 <body>
-<p>Hello events Show !!!</p>
+	<p>${f:h(event.presentation)}</p>
 </body>
 </html>
