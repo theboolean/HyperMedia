@@ -3,13 +3,10 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
-<title>projects Show</title>
-</head>
-<body>
+<jsp:include page="../common/header.jsp" >
+<jsp:param name="pageName" value="projects show"/>
+</jsp:include>
+
 	<h1>${f:h(project.name)}</h1>
 	${f:h(project.description)}
 	<br />
@@ -29,5 +26,6 @@
 	<br />
 	<a href="/results/show?project=${f:h(projectKey)}"
 		title="Important results of this project">Important Results</a>
-</body>
-</html>
+
+<jsp:include page="../common/footer.jsp" />
+

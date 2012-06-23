@@ -3,40 +3,8 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
-<title>Index</title>
-</head>
-<body>
-<div id="header">
-	<img src="/images/logo.jpg" height="100px" width="200px" />
-	PHICT Program
-</div>
+<jsp:include page="/common/header.jsp" >
+<jsp:param name="pageName" value="Index"/>
+</jsp:include>
 
-<div class="breadcrumb">
-  <span class="left"></span>
-    <ul>
-      <li><a href="#EUCommission">EU Commission</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="/partners/">Partners</a></li>
-      <li><a href="#ResearchThemes">Research Themes</a></li>
-      <li><a href="#history" class="last">History</a></li>
-	</ul>
-  <span class="right"></span>
-</div>
-
-<div class="dynBreadcrumb">
-  <span class="left"></span>
-    <ul>
-      <li><a href="#arg1">arg1</a></li>
-      <li><a href="#arg2">arg2</a></li>
-      <li><a href="#arg3" class="active">arg3</a></li>
-</ul>
-  <span class="right"></span>
-</div>
-
-<p>Hello Index !!!</p>
-</body>
-</html>
+<jsp:include page="/common/footer.jsp" />
