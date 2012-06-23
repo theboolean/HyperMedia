@@ -36,9 +36,9 @@ public class ShowController extends PhictController {
 
     private Navigation showPartnerResearchers(Key partnerKey) {
         Partner partner = partnerManager.select(partnerKey);
-        List<Researcher> partnerResearcher = partner.getResearchers();
+        List<Researcher> partnerResearchers = partner.getResearchers();
         requestScope("partner", partner);
-        requestScope("partnerResearcher", partnerResearcher);
+        requestScope("partnerResearchers", partnerResearchers);
         return forward("list.jsp");
     }
 

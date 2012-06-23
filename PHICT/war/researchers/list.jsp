@@ -10,7 +10,7 @@
 <title>events Show</title>
 </head>
 <body>
-	<c:forEach var="researcher" items="${partnerResearcher}">
+	<c:forEach var="researcher" items="${partnerResearchers}">
 		${f:h(researcher.curriculum)}
 		<br>
 		<br>
