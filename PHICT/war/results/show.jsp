@@ -3,13 +3,11 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
-<title>result Show</title>
-</head>
-<body>
+<jsp:include page="/common/header.jsp" >
+<jsp:param name="pageName" value="result Show"/>
+</jsp:include>
+
 	<p>${f:h(result.overview)}</p>
-</body>
-</html>
+
+<jsp:include page="/common/footer.jsp" />
+

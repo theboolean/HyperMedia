@@ -4,7 +4,7 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
 <jsp:include page="../common/header.jsp" >
-<jsp:param name="pageName" value="projects show"/>
+<jsp:param name="pageName" value="projects Show"/>
 </jsp:include>
 
 	<c:forEach var="project" items="${projects}">
