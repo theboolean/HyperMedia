@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/add.css" />
 <title>researcher Add</title>
 </head>
 <body>
@@ -20,6 +20,8 @@
 	            </c:forEach>
 	        </select> <br /><br />
 	        
+	        Name: <input name="name" class="addtxt" type="text" /> <br /><br />
+	        Surname: <input name="surname" class="addtxt" type="text" /> <br /><br />
 	        Curriculum: <input name="curriculum" class="addtxt" type="text" /> <br /><br />
 	        
 	        <input type="submit" value="Submit" />

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/add.css" />
 <title>result Add</title>
 </head>
 <body>
@@ -23,9 +23,11 @@
 	        Overview: <input name="overview" class="addtxt" type="text" /> <br /><br />
 	        
 	        Important:  
+	        <div class = "addRadio">
 	        <input type="radio" name="important" value="true"> yes
 			<input type="radio" name="important" value="false" checked> no<br>
-	        
+	        </div>
+	        <br /><br />
 	        <input type="submit" value="Submit" />
         </div>
     </form>

@@ -28,11 +28,10 @@ public class NewController extends PhictController {
         }
 
         Map<String, Object> map = new RequestMap(request);
-        String prejectKey = map.get("project").toString();
+        String projectKey = map.get("project").toString();
         map.put("project", asKey("project"));
 
         activityManager.create(map);
-
-        return forward("/projects/show?key=" + prejectKey);
+        return forward("/projects/show?key=" + projectKey);
     }
 }

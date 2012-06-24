@@ -3,15 +3,29 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
-<jsp:include page="/common/header.jsp" >
-<jsp:param name="pageName" value="researchers Show"/>
+<jsp:include page="/common/header.jsp">
+	<jsp:param name="pageName" value="researchers Show" />
 </jsp:include>
 
-	<c:forEach var="researcher" items="${partnerResearchers}">
-		${f:h(researcher.curriculum)}
-		<br>
-		<br>
-	</c:forEach>
+<div id="mainContainer">
+	<div id="innerContainer">
+		<div id="breadcrumbs">
+			<a href="#a">aaaa</a> &nbsp; &gt; &nbsp; <a href="#b">bbbb</a>
+		</div>
+
+		<div id="content">
+			<c:forEach var="researcher" items="${partnerResearchers}">
+				<h2>
+					<a href="/researchers/show?key=${f:h(researcher.id)}"
+						title="Go to researcher's home"> ${f:h(researcher.name)}
+						${f:h(researcher.surname)}</a>
+				</h2>
+				<br>
+				<br>
+			</c:forEach>
+		</div>
+	</div>
+</div>
 
 <jsp:include page="/common/footer.jsp" />
 

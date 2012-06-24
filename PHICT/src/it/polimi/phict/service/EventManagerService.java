@@ -43,4 +43,13 @@ public class EventManagerService extends ModelManagerService<Event> {
         return event;
     }
 
+    public Project getProjectByEvent(Key eventKey) {
+        Event event =
+            Datastore
+                .query(EventMeta.get())
+                .filter(EventMeta.get().id.equal(eventKey))
+                .asSingle();
+        return event.getProject();
+    }
+
 }

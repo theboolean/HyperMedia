@@ -42,4 +42,13 @@ public class ActivityManagerService extends ModelManagerService<Activity> {
 
         return activity;
     }
+    
+    public Project getProjectByActivity(Key activityKey) {
+        Activity activity =
+            Datastore
+                .query(ActivityMeta.get())
+                .filter(ActivityMeta.get().id.equal(activityKey))
+                .asSingle();
+        return activity.getProject();
+    }
 }

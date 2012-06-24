@@ -3,19 +3,29 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
-<jsp:include page="/common/header.jsp" >
-<jsp:param name="pageName" value="activities Show"/>
+<jsp:include page="/common/header.jsp">
+	<jsp:param name="pageName" value="activities Show" />
 </jsp:include>
 
-	<c:forEach var="activity" items="${projectActivities}">
-		<h2>
-			<a href="/activities/show?key=${f:h(activity.id)}"
-				title="Go to activity's home"> ${f:h(activity.goals)}</a>
-		</h2>
-		    ${f:h(activity.schedule)}  
+<div id="mainContainer">
+	<div id="innerContainer">
+		<div id="breadcrumbs">
+			<a href="#a">aaaa</a> &nbsp; &gt; &nbsp; <a href="#b">bbbb</a>
+		</div>
+
+		<div id="content">
+			<c:forEach var="activity" items="${projectActivities}">
+				<h2>
+					<a href="/activities/show?key=${f:h(activity.id)}"
+						title="Go to activity's home"> ${f:h(activity.goals)}</a>
+				</h2>
 		    <br>
-		<br>
-	</c:forEach>
-	
+				<br>
+			</c:forEach>
+		</div>
+	</div>
+</div>
+
+
 <jsp:include page="/common/footer.jsp" />
 

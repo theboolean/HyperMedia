@@ -25,7 +25,6 @@ public class NewController extends PhictController {
         }
 
         projectManager.create(new RequestMap(request));
-
-        return forward("show");
+        return forward("/projects/");
     }
 }

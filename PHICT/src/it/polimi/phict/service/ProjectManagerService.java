@@ -42,12 +42,12 @@ public class ProjectManagerService extends ModelManagerService<Project> {
         return project;
     }
 
-    public List<Partner> getProjectPartners(Project project) {
+    public List<Partner> getProjectPartners(Key projectKey) {
         List<Membership> membership =
             Datastore.query(Membership.class).asList();
         List<Partner> partners = new ArrayList<Partner>();
         for (Membership m : membership) {
-            if (m.getProject().getId().equals(project.getId())) {
+            if (m.getProject().getId().equals(projectKey)) {
                 partners.add(m.getPartner());
             }
         }

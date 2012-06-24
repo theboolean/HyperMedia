@@ -13,7 +13,7 @@ public class Researcher {
 
     private ModelRef<Partner> partnerRef = new ModelRef<Partner>(Partner.class);
 
-    private String curriculum;
+    private String curriculum, name, surname;
 
     public String getCurriculum() {
         return curriculum;
@@ -21,6 +21,22 @@ public class Researcher {
 
     public void setCurriculum(String curriculum) {
         this.curriculum = curriculum;
+    }
+    
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Partner getPartner() {

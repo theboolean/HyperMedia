@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-22 20:58:40")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-24 12:12:02")
 /** */
 public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Researcher> {
 
@@ -11,7 +11,13 @@ public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polim
     public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Researcher, com.google.appengine.api.datastore.Key> id = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Researcher, com.google.appengine.api.datastore.Key>(this, "__key__", "id", com.google.appengine.api.datastore.Key.class);
 
     /** */
+    public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Researcher> name = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Researcher>(this, "name", "name");
+
+    /** */
     public final org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Researcher, org.slim3.datastore.ModelRef<it.polimi.phict.model.Partner>, it.polimi.phict.model.Partner> partnerRef = new org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Researcher, org.slim3.datastore.ModelRef<it.polimi.phict.model.Partner>, it.polimi.phict.model.Partner>(this, "partnerRef", "partnerRef", org.slim3.datastore.ModelRef.class, it.polimi.phict.model.Partner.class);
+
+    /** */
+    public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Researcher> surname = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Researcher>(this, "surname", "surname");
 
     private static final ResearcherMeta slim3_singleton = new ResearcherMeta();
 
@@ -32,10 +38,12 @@ public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polim
         it.polimi.phict.model.Researcher model = new it.polimi.phict.model.Researcher();
         model.setCurriculum((java.lang.String) entity.getProperty("curriculum"));
         model.setId(entity.getKey());
+        model.setName((java.lang.String) entity.getProperty("name"));
         if (model.getPartnerRef() == null) {
             throw new NullPointerException("The property(partnerRef) is null.");
         }
         model.getPartnerRef().setKey((com.google.appengine.api.datastore.Key) entity.getProperty("partnerRef"));
+        model.setSurname((java.lang.String) entity.getProperty("surname"));
         return model;
     }
 
@@ -49,10 +57,12 @@ public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polim
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
         entity.setProperty("curriculum", m.getCurriculum());
+        entity.setProperty("name", m.getName());
         if (m.getPartnerRef() == null) {
             throw new NullPointerException("The property(partnerRef) must not be null.");
         }
         entity.setProperty("partnerRef", m.getPartnerRef().getKey());
+        entity.setProperty("surname", m.getSurname());
         return entity;
     }
 
@@ -123,9 +133,17 @@ public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polim
             writer.setNextPropertyName("id");
             encoder0.encode(writer, m.getId());
         }
+        if(m.getName() != null){
+            writer.setNextPropertyName("name");
+            encoder0.encode(writer, m.getName());
+        }
         if(m.getPartnerRef() != null && m.getPartnerRef().getKey() != null){
             writer.setNextPropertyName("partnerRef");
             encoder0.encode(writer, m.getPartnerRef(), maxDepth, currentDepth);
+        }
+        if(m.getSurname() != null){
+            writer.setNextPropertyName("surname");
+            encoder0.encode(writer, m.getSurname());
         }
         writer.endObject();
     }
@@ -139,8 +157,12 @@ public final class ResearcherMeta extends org.slim3.datastore.ModelMeta<it.polim
         m.setCurriculum(decoder0.decode(reader, m.getCurriculum()));
         reader = rootReader.newObjectReader("id");
         m.setId(decoder0.decode(reader, m.getId()));
+        reader = rootReader.newObjectReader("name");
+        m.setName(decoder0.decode(reader, m.getName()));
         reader = rootReader.newObjectReader("partnerRef");
         decoder0.decode(reader, m.getPartnerRef(), maxDepth, currentDepth);
+        reader = rootReader.newObjectReader("surname");
+        m.setSurname(decoder0.decode(reader, m.getSurname()));
         return m;
     }
 }

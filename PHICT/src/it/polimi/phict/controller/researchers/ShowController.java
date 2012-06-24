@@ -45,6 +45,7 @@ public class ShowController extends PhictController {
     private Navigation showResearcher(Key key) {
         Researcher researcher = researcherManager.select(key);
         requestScope("researcher", researcher);
+        requestScope("researcherKey", researcher.getId());
         return forward("show.jsp");
     }
 }

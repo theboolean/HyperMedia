@@ -3,29 +3,34 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
-<jsp:include page="../common/header.jsp" >
-<jsp:param name="pageName" value="project Show"/>
+<jsp:include page="../common/header.jsp">
+	<jsp:param name="pageName" value="project Show" />
 </jsp:include>
 
-	<h1>${f:h(project.name)}</h1>
-	${f:h(project.description)}
-	<br />
-	<br />${f:h(project.mainGoals)}
-	<br />
-	<br /> Semantic links:
-	<br />
+<div id="mainContainer">
+	<div id="innerContainer">
+		<div id="breadcrumbs">
+			<a href="#a">aaaa</a> &nbsp; &gt; &nbsp; <a href="#b">bbbb</a>
+		</div>
 
-	<a href="/activities/show?project=${f:h(projectKey)}"
-		title="Activities for this project">Activities</a>
-	<br />
-	<a href="/events/show?project=${f:h(projectKey)}"
-		title="Events for this project">Events</a>
-	<br />
-	<a href="/partners/show?project=${f:h(projectKey)}"
-		title="Partners for this project">Partners</a>
-	<br />
-	<a href="/results/show?project=${f:h(projectKey)}"
-		title="Important results of this project">Important Results</a>
+		<div id="content">
+			<h1>${f:h(project.name)}</h1>
+			${f:h(project.description)}
+			<br />
+			<br />
+			${f:h(project.mainGoals)}
+			<br /> <br /> Semantic links: <br /> <a
+				href="/activities/show?project=${f:h(projectKey)}"
+				title="Activities for this project">Activities</a> <br /> <a
+				href="/events/show?project=${f:h(projectKey)}"
+				title="Events for this project">Events</a> <br /> <a
+				href="/partners/show?project=${f:h(projectKey)}"
+				title="Partners for this project">Partners</a> <br /> <a
+				href="/results/show?project=${f:h(projectKey)}"
+				title="Important results of this project">Important Results</a>
+		</div>
+	</div>
+</div>
 
 <jsp:include page="../common/footer.jsp" />
 

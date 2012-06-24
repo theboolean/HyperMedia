@@ -43,4 +43,12 @@ public class ResearcherManagerService extends ModelManagerService<Researcher> {
         return researcher;
     }
 
+    public Partner getPartnerByResearcher(Key researcherKey) {
+        Researcher resesarcher =
+            Datastore
+                .query(ResearcherMeta.get())
+                .filter(ResearcherMeta.get().id.equal(researcherKey))
+                .asSingle();
+        return resesarcher.getPartner();
+    }
 }

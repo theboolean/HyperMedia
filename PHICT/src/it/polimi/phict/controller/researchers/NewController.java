@@ -20,6 +20,8 @@ public class NewController extends PhictController {
         ResearcherMeta meta = ResearcherMeta.get();
 
         validators.add("partner", validators.required());
+        validators.add(meta.name, validators.required());
+        validators.add(meta.surname, validators.required());
         validators.add(meta.curriculum, validators.required());
 
         if (!validators.validate()) {
