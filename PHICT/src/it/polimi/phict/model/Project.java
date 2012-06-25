@@ -2,9 +2,7 @@ package it.polimi.phict.model;
 
 import java.util.*;
 
-import org.slim3.datastore.Attribute;
-import org.slim3.datastore.InverseModelListRef;
-import org.slim3.datastore.Model;
+import org.slim3.datastore.*;
 
 import com.google.appengine.api.datastore.Key;
 
@@ -34,12 +32,7 @@ public class Project {
             "partnerRef",
             this);
     
-    @Attribute(persistent = false)
-    private InverseModelListRef<ThemeProjectRelation, Project> themeProjectRelationListRef =
-        new InverseModelListRef<ThemeProjectRelation, Project>(
-            ThemeProjectRelation.class, 
-            "projectRef", 
-            this);
+    private ModelRef<Theme> themeRef = new ModelRef<Theme>(Theme.class);
 
     private String name, description, mainGoals, publicDocumentation;
 
@@ -104,18 +97,8 @@ public class Project {
         return membershipListRef.getModelList();
     }
     
-    public List<ThemeProjectRelation> getThemeProjectRelations() {
-        return themeProjectRelationListRef.getModelList();
-    }
-    
-    public List<Theme> getThemes() {
-        List<Theme> themes = new ArrayList<Theme>();
-        
-        for(ThemeProjectRelation relation : themeProjectRelationListRef.getModelList()) {
-            themes.add(relation.getTheme());
-        }
-        
-        return themes;
+    public Theme getTheme() {
+        return themeRef.getModel();
     }
 
     
@@ -135,8 +118,8 @@ public class Project {
         return eventsListRef;
     }
     
-    public InverseModelListRef<ThemeProjectRelation, Project> getThemeProjectRelationListRef() {
-        return themeProjectRelationListRef;
+    public ModelRef<Theme> getThemeRef() {
+        return themeRef;
     }
 
     

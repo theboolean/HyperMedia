@@ -12,9 +12,9 @@ public class Theme {
     private Key id;
     
     @Attribute(persistent = false)
-    private InverseModelListRef<ThemeProjectRelation, Theme> themeProjectRelationListRef = 
-        new InverseModelListRef<ThemeProjectRelation, Theme>(
-            ThemeProjectRelation.class, 
+    private InverseModelListRef<Project, Theme> themeProjectRelationListRef = 
+        new InverseModelListRef<Project, Theme>(
+            Project.class, 
             "themeRef", 
             this);
     
@@ -45,22 +45,11 @@ public class Theme {
     }
 
     
-    public List<ThemeProjectRelation> getThemeProjectRelations() {
+    public List<Project> getProjects() {
         return themeProjectRelationListRef.getModelList();
     }
     
-    public List<Project> getProjects() {
-        List<Project> projects = new ArrayList<Project>();
-        
-        for(ThemeProjectRelation relation : themeProjectRelationListRef.getModelList()) {
-            projects.add(relation.getProject());
-        }
-        
-        return projects;
-    }
-    
-    
-    public InverseModelListRef<ThemeProjectRelation, Theme> getThemeProjectRelationListRef() {
+    public InverseModelListRef<Project, Theme> getThemeProjectRelationListRef() {
         return themeProjectRelationListRef;
     }
 }
