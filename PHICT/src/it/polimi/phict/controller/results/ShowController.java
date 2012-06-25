@@ -6,7 +6,7 @@ import it.polimi.phict.model.Project;
 import it.polimi.phict.model.Result;
 import it.polimi.phict.service.ActivityManagerService;
 import it.polimi.phict.service.ProjectManagerService;
-import it.polimi.phict.service.ReusltManagerService;
+import it.polimi.phict.service.ResultManagerService;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import com.google.appengine.api.datastore.Key;
 public class ShowController extends PhictController {
     private static ActivityManagerService activityManager =
         ActivityManagerService.get();
-    private static ReusltManagerService resultManager = ReusltManagerService
+    private static ResultManagerService resultManager = ResultManagerService
         .get();
     private static ProjectManagerService projectManager = ProjectManagerService
         .get();

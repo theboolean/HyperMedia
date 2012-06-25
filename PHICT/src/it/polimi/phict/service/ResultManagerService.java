@@ -12,18 +12,18 @@ import org.slim3.util.BeanUtil;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Transaction;
 
-public class ReusltManagerService extends ModelManagerService<Result> {
-    private static ReusltManagerService instance;
+public class ResultManagerService extends ModelManagerService<Result> {
+    private static ResultManagerService instance;
 
-    public static synchronized ReusltManagerService get() {
+    public static synchronized ResultManagerService get() {
         if (instance != null) {
             return instance;
         }
 
-        return (instance = new ReusltManagerService());
+        return (instance = new ResultManagerService());
     }
 
-    private ReusltManagerService() {
+    private ResultManagerService() {
         super(Result.class, ResultMeta.get());
     }
 

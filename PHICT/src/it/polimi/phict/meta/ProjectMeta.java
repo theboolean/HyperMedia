@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-25 19:16:33")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-25 21:29:40")
 /** */
 public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Project> {
 
@@ -18,6 +18,9 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
 
     /** */
     public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Project> publicDocumentation = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Project>(this, "publicDocumentation", "publicDocumentation");
+
+    /** */
+    public final org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Project, org.slim3.datastore.ModelRef<it.polimi.phict.model.Theme>, it.polimi.phict.model.Theme> themeRef = new org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Project, org.slim3.datastore.ModelRef<it.polimi.phict.model.Theme>, it.polimi.phict.model.Theme>(this, "themeRef", "themeRef", org.slim3.datastore.ModelRef.class, it.polimi.phict.model.Theme.class);
 
     private static final ProjectMeta slim3_singleton = new ProjectMeta();
 
@@ -41,6 +44,10 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
         model.setMainGoals((java.lang.String) entity.getProperty("mainGoals"));
         model.setName((java.lang.String) entity.getProperty("name"));
         model.setPublicDocumentation((java.lang.String) entity.getProperty("publicDocumentation"));
+        if (model.getThemeRef() == null) {
+            throw new NullPointerException("The property(themeRef) is null.");
+        }
+        model.getThemeRef().setKey((com.google.appengine.api.datastore.Key) entity.getProperty("themeRef"));
         return model;
     }
 
@@ -57,6 +64,10 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
         entity.setProperty("mainGoals", m.getMainGoals());
         entity.setProperty("name", m.getName());
         entity.setProperty("publicDocumentation", m.getPublicDocumentation());
+        if (m.getThemeRef() == null) {
+            throw new NullPointerException("The property(themeRef) must not be null.");
+        }
+        entity.setProperty("themeRef", m.getThemeRef().getKey());
         return entity;
     }
 
@@ -80,6 +91,11 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
 
     @Override
     protected void assignKeyToModelRefIfNecessary(com.google.appengine.api.datastore.AsyncDatastoreService ds, java.lang.Object model) {
+        it.polimi.phict.model.Project m = (it.polimi.phict.model.Project) model;
+        if (m.getThemeRef() == null) {
+            throw new NullPointerException("The property(themeRef) must not be null.");
+        }
+        m.getThemeRef().assignKeyIfNecessary(ds);
     }
 
     @Override
@@ -134,6 +150,10 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
             writer.setNextPropertyName("publicDocumentation");
             encoder0.encode(writer, m.getPublicDocumentation());
         }
+        if(m.getThemeRef() != null && m.getThemeRef().getKey() != null){
+            writer.setNextPropertyName("themeRef");
+            encoder0.encode(writer, m.getThemeRef(), maxDepth, currentDepth);
+        }
         writer.endObject();
     }
 
@@ -152,6 +172,8 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
         m.setName(decoder0.decode(reader, m.getName()));
         reader = rootReader.newObjectReader("publicDocumentation");
         m.setPublicDocumentation(decoder0.decode(reader, m.getPublicDocumentation()));
+        reader = rootReader.newObjectReader("themeRef");
+        decoder0.decode(reader, m.getThemeRef(), maxDepth, currentDepth);
         return m;
     }
 }

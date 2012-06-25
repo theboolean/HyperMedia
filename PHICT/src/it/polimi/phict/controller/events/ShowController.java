@@ -43,8 +43,9 @@ public class ShowController extends PhictController {
 
     private Navigation showEvents(Key key) {
         Event event = eventManager.select(key);
+        Project project = event.getProject();
         requestScope("event", event);
-        requestScope("eventKey", event.getId());
+        requestScope("projectKey", project.getId());
         return forward("show.jsp");
     }
 }

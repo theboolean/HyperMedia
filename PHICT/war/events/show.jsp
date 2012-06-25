@@ -15,9 +15,8 @@
 
 		<div id="content">
 			<p>${f:h(event.presentation)}</p>
-			<br /> <br /> Semantic links: <br /> <a
-				href="/projects/show?event=${f:h(eventKey)}"
-				title="Related Project">Related Project</a>
+			<br /> <br /> Semantic links: <br /> 
+			<a href="/projects/show?key=${f:h(projectKey)}" title="Related Project">Related Project</a>
 		</div>
 	</div>
 </div>

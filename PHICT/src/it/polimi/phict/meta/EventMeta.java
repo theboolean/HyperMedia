@@ -1,6 +1,6 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-25 19:16:09")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-25 21:29:40")
 /** */
 public final class EventMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Event> {
 

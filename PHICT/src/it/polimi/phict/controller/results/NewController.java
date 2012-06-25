@@ -2,7 +2,7 @@ package it.polimi.phict.controller.results;
 
 import it.polimi.phict.controller.PhictController;
 import it.polimi.phict.meta.ResultMeta;
-import it.polimi.phict.service.ReusltManagerService;
+import it.polimi.phict.service.ResultManagerService;
 
 import java.util.Map;
 
@@ -11,7 +11,7 @@ import org.slim3.controller.validator.Validators;
 import org.slim3.util.RequestMap;
 
 public class NewController extends PhictController {
-    private static ReusltManagerService resultManager = ReusltManagerService
+    private static ResultManagerService resultManager = ResultManagerService
         .get();
 
     @Override

@@ -17,14 +17,9 @@
 			<p>
 				${f:h(activity.schedule)}<br /> ${f:h(activity.goals)}
 			</p>
-			<br />Semantic links: <br /> <a
-				href="/results/show?activity=${f:h(activityKey)
-				}"
-				title="Results of this activity">Results</a> <br />
-				<a
-				href="/projects/show?activity=${f:h(activityKey)
-				}"
-				title="Project of this activity">Related Project</a> <br />
+			<br />Semantic links: <br /> 
+			<a href="/results/show?activity=${f:h(activity.id)}" title="Results of this activity">Results</a> <br />
+			<a href="/projects/show?key=${f:h(projectKey)}" title="Project of this activity">Related Project</a> <br />
 		</div>
 	</div>
 </div>
