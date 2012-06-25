@@ -16,14 +16,14 @@ body {
 	margin-top: -250px;
 }
 
-.add input, .add textarea {
+.add input, .add textarea, .add select {
 	background: #FFF;
 	border: 1px solid #888;
 	border-radius: 4px;
 	color: #333;
 }
 
-.add input[type="text"] {
+.add input[type="text"], .add select {
 	float: right;
 	width: 15em;
 	height: 20px;
@@ -34,12 +34,10 @@ body {
 }
 
 .add input[type="radio"] {
-	float: right;
-	width: 15em;
 	height: 20px;
 	line-height: 15px;
-	width: 170px;
 	margin-bottom: 3px;
+	margin-left: 30px;
 	padding: 1px 2px 1px 2px;
 }
 

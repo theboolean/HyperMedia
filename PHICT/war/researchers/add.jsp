@@ -12,17 +12,22 @@
 <body>
     <form name="addResearcher" action="new" method="POST">
         <div class="add">
-            <center>Add a new researcher <br /><br /></center>
-	        Partner:
-	        <select name="partner" class="addtxt">
-	            <c:forEach var="partner" items="${partners}">
-	                <option value="${f:h(partner.id)}">${f:h(partner.name)}</option>
-	            </c:forEach>
-	        </select> <br /><br />
+            <h3>Add a new researcher </h3>
+            
+            <div class="formRow">
+		        Partner:
+		        <select name="partner">
+		            <c:forEach var="partner" items="${partners}">
+		                <option value="${f:h(partner.id)}">${f:h(partner.name)}</option>
+		            </c:forEach>
+		        </select>
+	        </div>
 	        
-	        Name: <input name="name" class="addtxt" type="text" /> <br /><br />
-	        Surname: <input name="surname" class="addtxt" type="text" /> <br /><br />
-	        Curriculum: <input name="curriculum" class="addtxt" type="text" /> <br /><br />
+	        <div class="formRow"> Name: <input name="name" type="text" /> </div>
+	        
+	        <div class="formRow"> Surname: <input name="surname" type="text" /> </div>
+	        
+	        <div class="formRow"> Curriculum: <textarea name="curriculum"></textarea> </div>
 	        
 	        <input type="submit" value="Submit" />
         </div>

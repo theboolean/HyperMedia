@@ -12,17 +12,23 @@
 <body>
     <form name="addPartner" action="new" method="POST">
     	<div class="add">
-    	<center>Add a new partner <br /><br /></center>
-	Project:
-	        <select name="project" class="addtxt">
-	            <c:forEach var="project" items="${projects}">
-	                <option value="${f:h(project.id)}">${f:h(project.name)}</option>
-	            </c:forEach>
-	        </select> <br /><br />
-	        Name: <input name="name" class="addtxt" type="text" /> <br /><br />
-	        Description: <input name="description" class="addtxt" type="text" /> <br /><br />
-
-	        <input type="submit" value="Submit" />    	</div>
+	    	<h3>Add a new partner </h3>
+	    	
+	    	<div class="formRow">
+				Project:
+		        <select name="project">
+		            <c:forEach var="project" items="${projects}">
+		                <option value="${f:h(project.id)}">${f:h(project.name)}</option>
+		            </c:forEach>
+		        </select> 
+		    </div>
+		    
+		    <div class="formRow"> Name: <input name="name" type="text" /> </div>
+		    
+		    <div class="formRow"> Description: <input name="description" type="text" /> </div>
+	
+		    <input type="submit" value="Submit" />    	
+	    </div>
     </form>
 </body>
 </html>

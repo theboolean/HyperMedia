@@ -12,15 +12,18 @@
 <body>
     <form name="addEvent" action="new" method="POST">
         <div class="add">
-            <center>Add a new event <br /><br /></center>
-	        Project:
-	        <select name="project" class="addtxt">
-	            <c:forEach var="project" items="${projects}">
-	                <option value="${f:h(project.id)}">${f:h(project.name)}</option>
-	            </c:forEach>
-	        </select> <br /><br />
+            <h3>Add a new event </h3>
+            
+            <div class="formRow">
+		        Project:
+		        <select name="project">
+		            <c:forEach var="project" items="${projects}">
+		                <option value="${f:h(project.id)}">${f:h(project.name)}</option>
+		            </c:forEach>
+		        </select>
+	        </div>
 	        
-	        Presentation: <input name="presentation" class="addtxt" type="text" /> <br /><br />
+	        <div class="formRow"> Presentation: <input name="presentation" type="text" /> </div>
 	        
 	        <input type="submit" value="Submit" />
         </div>
