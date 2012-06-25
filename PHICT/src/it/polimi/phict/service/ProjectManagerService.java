@@ -1,9 +1,7 @@
 package it.polimi.phict.service;
 
 import it.polimi.phict.meta.ProjectMeta;
-import it.polimi.phict.model.Membership;
-import it.polimi.phict.model.Partner;
-import it.polimi.phict.model.Project;
+import it.polimi.phict.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +31,9 @@ public class ProjectManagerService extends ModelManagerService<Project> {
     public Project create(Map<String, Object> rawData) {
         Project project = new Project();
         BeanUtil.copy(rawData, project);
+        
+        Theme theme = ThemeManagerService.get().select((Key) rawData.get("theme"));
+        project.getThemeRef().setModel(theme);
 
         Transaction transaction = Datastore.beginTransaction();
         Key key = Datastore.put(project);

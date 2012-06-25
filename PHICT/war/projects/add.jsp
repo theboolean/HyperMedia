@@ -25,6 +25,14 @@
 	        <div class="formRow">
 	        	Public Documentation (optional): <br/> <textarea name="publicDocumentation"></textarea>
 	        </div>
+	        <div class="formRow">
+	        	Theme:
+		        <select name="theme">
+		            <c:forEach var="theme" items="${themes}">
+		                <option value="${f:h(theme.id)}">${f:h(theme.name)}</option>
+		            </c:forEach>
+		        </select>
+	        </div>
 	        
 	        <input type="submit" value="Add" />
     	</div>

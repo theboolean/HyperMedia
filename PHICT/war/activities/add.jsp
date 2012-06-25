@@ -12,16 +12,19 @@
 <body>
     <form name="addActivity" action="new" method="POST">
         <div class="add">
-            <center>Add a new activity <br /><br /></center>
-	        Project:
-	        <select name="project" class="addtxt">
-	            <c:forEach var="project" items="${projects}">
-	                <option value="${f:h(project.id)}">${f:h(project.name)}</option>
-	            </c:forEach>
-	        </select> <br /><br />
+            <h3>Add a new activity </h3>
+            
+            <div class="formRow">
+		        Project:
+		        <select name="project">
+		            <c:forEach var="project" items="${projects}">
+		                <option value="${f:h(project.id)}">${f:h(project.name)}</option>
+		            </c:forEach>
+		        </select>
+	        </div>
 	        
-	        Schedule: <input name="schedule" class="addtxt" type="text" /> <br /><br />
-	        Goals: <input name="goals" class="addtxt" type="text" /> <br /><br />
+	        <div class="formRow"> Schedule: <input name="schedule" type="text" /> </div>
+	        <div class="formRow"> Goals: <input name="goals" type="text" /> </div>
 	        
 	        <input type="submit" value="Submit" />
         </div>
