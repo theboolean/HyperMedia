@@ -12,10 +12,20 @@
 <body>
     <form name="addProject" action="new" method="POST">
     	<div class="add">
-    	<center>Add a new project <br /><br /></center>
-	        Name: <input name="name" class="addtxt" type="text" /> <br /><br />
-	        Description: <input name="description" class="addtxt" type="text" /> <br /><br />
-	        Main Goals: <input name="mainGoals" class="addtxt" type="text" /> <br /><br />
+    		<h3> Add a new project </h3>
+	        <div class="formRow">
+	        	Name: <input name="name" type="text" />
+	        </div>
+	        <div class="formRow">
+	        	Description: <br/> <textarea name="description"></textarea>
+	        </div>
+	        <div class="formRow">
+	        	Main Goals: <br/> <textarea name="mainGoals"></textarea>
+	        </div>
+	        <div class="formRow">
+	        	Public Documentation (optional): <br/> <textarea name="publicDocumentation"></textarea>
+	        </div>
+	        
 	        <input type="submit" value="Add" />
     	</div>
     </form>

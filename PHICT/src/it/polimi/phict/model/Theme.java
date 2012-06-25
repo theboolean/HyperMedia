@@ -60,7 +60,7 @@ public class Theme {
     }
     
     
-    public InverseModelListRef<ThemeProjectRelation, Theme> getProjectListRef() {
+    public InverseModelListRef<ThemeProjectRelation, Theme> getThemeProjectRelationListRef() {
         return themeProjectRelationListRef;
     }
 }
