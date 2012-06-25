@@ -1,7 +1,6 @@
 package it.polimi.phict.model;
 
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.InverseModelListRef;
@@ -23,13 +22,23 @@ public class Project {
 
     @Attribute(persistent = false)
     private InverseModelListRef<Event, Project> eventsListRef =
-        new InverseModelListRef<Event, Project>(Event.class, "projectRef", this);
+        new InverseModelListRef<Event, Project>(
+            Event.class, 
+            "projectRef", 
+            this);
 
     @Attribute(persistent = false)
     private InverseModelListRef<Membership, Project> membershipListRef =
         new InverseModelListRef<Membership, Project>(
             Membership.class,
             "partnerRef",
+            this);
+    
+    @Attribute(persistent = false)
+    private InverseModelListRef<ThemeProjectRelation, Project> themeProjectRelationListRef =
+        new InverseModelListRef<ThemeProjectRelation, Project>(
+            ThemeProjectRelation.class, 
+            "projectRef", 
             this);
 
     private String name, description, mainGoals, publicDocumentation;
@@ -74,6 +83,7 @@ public class Project {
         this.publicDocumentation = publicDocumentation;
     }
 
+    
     public List<Activity> getActivities() {
         return activityListRef.getModelList();
     }
@@ -93,7 +103,22 @@ public class Project {
     public List<Membership> getMemberships() {
         return membershipListRef.getModelList();
     }
+    
+    public List<ThemeProjectRelation> getThemeProjectRelations() {
+        return themeProjectRelationListRef.getModelList();
+    }
+    
+    public List<Theme> getThemes() {
+        List<Theme> themes = new ArrayList<Theme>();
+        
+        for(ThemeProjectRelation relation : themeProjectRelationListRef.getModelList()) {
+            themes.add(relation.getTheme());
+        }
+        
+        return themes;
+    }
 
+    
     public InverseModelListRef<Activity, Project> getActivityListRef() {
         return activityListRef;
     }
@@ -109,7 +134,12 @@ public class Project {
     public InverseModelListRef<Event, Project> getEventsListRef() {
         return eventsListRef;
     }
+    
+    public InverseModelListRef<ThemeProjectRelation, Project> getThemeProjectRelationListRef() {
+        return themeProjectRelationListRef;
+    }
 
+    
     private class ImportantResultIterator implements Iterator<Result> {
         Iterator<Activity> activityIterator;
         Iterator<Result> activityResultIterator;
