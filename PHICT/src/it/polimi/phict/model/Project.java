@@ -36,6 +36,8 @@ public class Project {
 
     private String name, description, mainGoals, publicDocumentation;
 
+    private Integer startYear, endYear;
+    
     public Key getId() {
         return id;
     }
@@ -76,6 +78,22 @@ public class Project {
         this.publicDocumentation = publicDocumentation;
     }
 
+    public Integer getStartYear() {
+        return startYear;
+    }
+
+    public void setStartYear(Integer startYear) {
+        this.startYear = startYear;
+    }
+
+
+    public Integer getEndYear() {
+        return endYear;
+    }
+
+    public void setEndYear(Integer endYear) {
+        this.endYear = endYear;
+    }
     
     public List<Activity> getActivities() {
         return activityListRef.getModelList();
@@ -100,8 +118,7 @@ public class Project {
     public Theme getTheme() {
         return themeRef.getModel();
     }
-
-    
+  
     public InverseModelListRef<Activity, Project> getActivityListRef() {
         return activityListRef;
     }
@@ -122,7 +139,6 @@ public class Project {
         return themeRef;
     }
 
-    
     private class ImportantResultIterator implements Iterator<Result> {
         Iterator<Activity> activityIterator;
         Iterator<Result> activityResultIterator;

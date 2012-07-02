@@ -28,10 +28,9 @@ public class NewController extends PhictController {
         }
 
         Map<String, Object> map = new RequestMap(request);
-        String projectKey = map.get("project").toString();
         map.put("project", asKey("project"));
 
         activityManager.create(map);
-        return forward("/projects/show?key=" + projectKey);
+        return forward("../admin.jsp");
     }
 }

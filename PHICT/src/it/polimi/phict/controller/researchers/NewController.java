@@ -29,10 +29,9 @@ public class NewController extends PhictController {
         }
 
         Map<String, Object> map = new RequestMap(request);
-        String partnerKey = map.get("partner").toString();
         map.put("partner", asKey("partner"));
 
         researcherManager.create(map);
-        return forward("/partners/show?key=" + partnerKey);
+        return forward("../admin.jsp");
     }
 }

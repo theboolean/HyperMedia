@@ -1,19 +1,16 @@
 package it.polimi.phict.controller.projects;
 
-import java.util.*;
-
-import it.polimi.phict.model.*;
-import it.polimi.phict.service.*;
+import it.polimi.phict.service.ThemeManagerService;
 
 import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
 
 public class AddController extends Controller {
 
+    private static ThemeManagerService themesManager = ThemeManagerService.get();
     @Override
     public Navigation run() throws Exception {
-        List<Theme> themes = ThemeManagerService.get().selectAll();
-        requestScope("themes", themes);
+        requestScope("themes", themesManager.selectAll());
         return forward("add.jsp");
     }
 }

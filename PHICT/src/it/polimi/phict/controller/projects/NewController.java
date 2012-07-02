@@ -19,6 +19,7 @@ public class NewController extends PhictController {
         validators.add(meta.name, validators.required());
         validators.add(meta.description, validators.required());
         validators.add(meta.mainGoals, validators.required());
+        validators.add(meta.startYear, validators.required());
         validators.add("theme", validators.required());
 
         if (!validators.validate()) {
@@ -26,6 +27,6 @@ public class NewController extends PhictController {
         }
 
         projectManager.create(new RequestMap(request));
-        return forward("/projects/");
+        return forward("../admin.jsp");
     }
 }

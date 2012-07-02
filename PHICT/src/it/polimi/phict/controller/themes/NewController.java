@@ -26,9 +26,10 @@ public class NewController extends PhictController {
         }
 
         Map<String, Object> map = new RequestMap(request);
-
+        map.put("theme", asKey("theme"));
+        
         themeManager.create(map);
         
-        return forward("/themes/");
+        return forward("../admin.jsp");
     }
 }

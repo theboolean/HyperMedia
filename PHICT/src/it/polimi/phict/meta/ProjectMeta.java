@@ -1,11 +1,14 @@
 package it.polimi.phict.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-25 21:29:40")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-07-02 16:06:14")
 /** */
 public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.phict.model.Project> {
 
     /** */
     public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Project> description = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Project>(this, "description", "description");
+
+    /** */
+    public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Project, java.lang.Integer> endYear = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Project, java.lang.Integer>(this, "endYear", "endYear", java.lang.Integer.class);
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Project, com.google.appengine.api.datastore.Key> id = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Project, com.google.appengine.api.datastore.Key>(this, "__key__", "id", com.google.appengine.api.datastore.Key.class);
@@ -18,6 +21,9 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
 
     /** */
     public final org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Project> publicDocumentation = new org.slim3.datastore.StringAttributeMeta<it.polimi.phict.model.Project>(this, "publicDocumentation", "publicDocumentation");
+
+    /** */
+    public final org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Project, java.lang.Integer> startYear = new org.slim3.datastore.CoreAttributeMeta<it.polimi.phict.model.Project, java.lang.Integer>(this, "startYear", "startYear", java.lang.Integer.class);
 
     /** */
     public final org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Project, org.slim3.datastore.ModelRef<it.polimi.phict.model.Theme>, it.polimi.phict.model.Theme> themeRef = new org.slim3.datastore.ModelRefAttributeMeta<it.polimi.phict.model.Project, org.slim3.datastore.ModelRef<it.polimi.phict.model.Theme>, it.polimi.phict.model.Theme>(this, "themeRef", "themeRef", org.slim3.datastore.ModelRef.class, it.polimi.phict.model.Theme.class);
@@ -40,10 +46,12 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
     public it.polimi.phict.model.Project entityToModel(com.google.appengine.api.datastore.Entity entity) {
         it.polimi.phict.model.Project model = new it.polimi.phict.model.Project();
         model.setDescription((java.lang.String) entity.getProperty("description"));
+        model.setEndYear(longToInteger((java.lang.Long) entity.getProperty("endYear")));
         model.setId(entity.getKey());
         model.setMainGoals((java.lang.String) entity.getProperty("mainGoals"));
         model.setName((java.lang.String) entity.getProperty("name"));
         model.setPublicDocumentation((java.lang.String) entity.getProperty("publicDocumentation"));
+        model.setStartYear(longToInteger((java.lang.Long) entity.getProperty("startYear")));
         if (model.getThemeRef() == null) {
             throw new NullPointerException("The property(themeRef) is null.");
         }
@@ -61,9 +69,11 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
         entity.setProperty("description", m.getDescription());
+        entity.setProperty("endYear", m.getEndYear());
         entity.setProperty("mainGoals", m.getMainGoals());
         entity.setProperty("name", m.getName());
         entity.setProperty("publicDocumentation", m.getPublicDocumentation());
+        entity.setProperty("startYear", m.getStartYear());
         if (m.getThemeRef() == null) {
             throw new NullPointerException("The property(themeRef) must not be null.");
         }
@@ -134,6 +144,10 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
             writer.setNextPropertyName("description");
             encoder0.encode(writer, m.getDescription());
         }
+        if(m.getEndYear() != null){
+            writer.setNextPropertyName("endYear");
+            encoder0.encode(writer, m.getEndYear());
+        }
         if(m.getId() != null){
             writer.setNextPropertyName("id");
             encoder0.encode(writer, m.getId());
@@ -150,6 +164,10 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
             writer.setNextPropertyName("publicDocumentation");
             encoder0.encode(writer, m.getPublicDocumentation());
         }
+        if(m.getStartYear() != null){
+            writer.setNextPropertyName("startYear");
+            encoder0.encode(writer, m.getStartYear());
+        }
         if(m.getThemeRef() != null && m.getThemeRef().getKey() != null){
             writer.setNextPropertyName("themeRef");
             encoder0.encode(writer, m.getThemeRef(), maxDepth, currentDepth);
@@ -164,6 +182,8 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
         org.slim3.datastore.json.Default decoder0 = new org.slim3.datastore.json.Default();
         reader = rootReader.newObjectReader("description");
         m.setDescription(decoder0.decode(reader, m.getDescription()));
+        reader = rootReader.newObjectReader("endYear");
+        m.setEndYear(decoder0.decode(reader, m.getEndYear()));
         reader = rootReader.newObjectReader("id");
         m.setId(decoder0.decode(reader, m.getId()));
         reader = rootReader.newObjectReader("mainGoals");
@@ -172,6 +192,8 @@ public final class ProjectMeta extends org.slim3.datastore.ModelMeta<it.polimi.p
         m.setName(decoder0.decode(reader, m.getName()));
         reader = rootReader.newObjectReader("publicDocumentation");
         m.setPublicDocumentation(decoder0.decode(reader, m.getPublicDocumentation()));
+        reader = rootReader.newObjectReader("startYear");
+        m.setStartYear(decoder0.decode(reader, m.getStartYear()));
         reader = rootReader.newObjectReader("themeRef");
         decoder0.decode(reader, m.getThemeRef(), maxDepth, currentDepth);
         return m;

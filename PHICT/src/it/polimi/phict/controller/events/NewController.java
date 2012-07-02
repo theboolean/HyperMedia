@@ -26,10 +26,9 @@ public class NewController extends PhictController {
         }
 
         Map<String, Object> map = new RequestMap(request);
-        String prejectKey = map.get("project").toString();
         map.put("project", asKey("project"));
 
         eventManager.create(map);
-        return forward("/projects/show?key=" + prejectKey);
+        return forward("../admin.jsp");
     }
 }

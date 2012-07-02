@@ -39,23 +39,21 @@
     
     <div id="header">
         <div id="title">  
-            <a href="/">	
-          	<span class="mainTitle">
-            	  <span class="whiteOnShadow">PHICT</span> <span class="blackOnShadow">Program</span> 
-         	</span>
-         	<span class="slogan"> An european funded international program for ICT enrichment. </span>
-        	</a>     
+            <span class="mainTitle">
+            	<a href="/"><span class="whiteOnShadow">PHICT</span> <span class="blackOnShadow">Program</span></a> 
+         	</span> 
+         	<span class="slogan"> An european funded international program for ICT enrichment. </span>    
         </div>
         
         <div id="landmarks">
             <ul>
                 <li> 
-                    <a href="#EUCommission">EU Commission</a>
+                    <a href="/europe">EU Commission</a>
                     <span class="description"> The european commission has invested over 2.45 billion euros in the PHICT program and is currently helping in the development of major projects that will improve our quality of life. Learn more about the commission and its objectives in this section. </span>
                     <img class="illustration" src="/images/eu_flag_small.jpg" />
                 </li>
                 <li>
-                    <a href="#results"> Program Results </a>
+                    <a href="/results"> Program Results </a>
                     <span class="description"> The PHICT program has been operative since the end of 2011 and a few projects begun to show significant results. This section outlines the main trends of the program.</span>
                     <img class="illustration" src="/images/ict_small.jpg" />
                 </li>
@@ -70,7 +68,7 @@
                     <img class="illustration" src="/images/technology_small.jpg" />
                 </li>
                 <li>
-                    <a href="#history" class="last">History</a>
+                    <a href="/history" class="last">History</a>
                     <span class="description"> Here you can find the list of all completed projects, along with all published documents, involved researchers, partners and events of the past year. </span>
                     <img class="illustration" src="/images/trend_small.jpg" />
                 </li>

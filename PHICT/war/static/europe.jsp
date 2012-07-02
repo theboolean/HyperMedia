@@ -4,13 +4,17 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
 <jsp:include page="/common/header.jsp">
-	<jsp:param name="pageName" value="Index" />
+	<jsp:param name="pageName" value="EU Commission" />
 </jsp:include>
 
 <div id="mainContainer">
 	<div id="innerContainer">
+		<div id="breadcrumbs">
+			<a href="#">EU Commission</a>
+		</div>
+
 		<div id="content">
-			<p>Hello Index !!!</p>
+			<p>Hello EU Commission !!!</p>
 		</div>
 	</div>
 </div>

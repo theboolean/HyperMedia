@@ -22,6 +22,12 @@
 	        <div class="formRow">
 	        	Main Goals: <br/> <textarea name="mainGoals"></textarea>
 	        </div>
+	         <div class="formRow">
+	        	Start: <input name="startYear" type="text" />
+	        </div>
+	        <div class="formRow">
+	        	End (optional): <input name="endYear" type="text" />
+	        </div>
 	        <div class="formRow">
 	        	Public Documentation (optional): <br/> <textarea name="publicDocumentation"></textarea>
 	        </div>
