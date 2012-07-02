@@ -7,6 +7,6 @@ public class ResultsController extends Controller {
 
     @Override
     public Navigation run() throws Exception {
-        return forward("static/results.jsp");
+        return forward("results.jsp");
     }
 }

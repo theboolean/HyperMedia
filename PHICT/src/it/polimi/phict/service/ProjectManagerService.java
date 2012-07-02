@@ -54,4 +54,30 @@ public class ProjectManagerService extends ModelManagerService<Project> {
         }
         return partners;
     }
+
+    public List<Project> getProjectsByStartYear(Integer year) {
+        List<Project> projects = new ArrayList<Project>();
+        for (Project p : selectAll()) {
+            /*
+             * TODO rimuovere controllo != null, necessario finchè esistono nel
+             * db projects senza start year, sarà impossibile che ciò avvenga in
+             * futuro visto che startYear è un campo obbligatorio
+             */
+            if (p.getStartYear() != null && p.getStartYear().equals(year)) {
+                projects.add(p);
+            }
+        }
+        //TODO elementi di projects in ordine crescente
+        return projects;
+    }
+    
+    public List<Project> getProjectsByEndYear() {
+        List<Project> projects = new ArrayList<Project>();
+        for (Project p : selectAll()) {
+            if (p.getEndYear() != null) {
+                projects.add(p);
+            }
+        }
+        return projects;
+    }
 }

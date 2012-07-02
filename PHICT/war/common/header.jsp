@@ -63,7 +63,7 @@
                     <img class="illustration" src="/images/academy_small.jpg" />
                 </li>
                 <li>
-                    <a href="/projects/">Projects</a>
+                    <a href="/themes/">Projects</a>
                     <span class="description"> The project area covers a wide range of topics, from robotics to networks, from biotechnology to cryptography, etc... Here you can browse all the main topics of research.</span>
                     <img class="illustration" src="/images/technology_small.jpg" />
                 </li>

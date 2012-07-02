@@ -7,6 +7,6 @@ public class EuropeController extends Controller {
 
     @Override
     public Navigation run() throws Exception {
-        return forward("static/europe.jsp");
+        return forward("europe.jsp");
     }
 }

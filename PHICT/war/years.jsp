@@ -4,29 +4,26 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
 <jsp:include page="/common/header.jsp">
-	<jsp:param name="pageName" value="themes Show" />
+	<jsp:param name="pageName" value="years Show" />
 </jsp:include>
 
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="/themes/">All Themes</a>
+			<a href="#">All years</a>
 		</div>
 
 		<div id="content">
-			<c:forEach var="theme" items="${themes}">
+			<c:forEach var="year" items="${years}">
 				<h2><a
-				href="/themes/show?key=${f:h(theme.id)}"
-				title="Projects by this theme">${f:h(theme.name)}</a></h2>
-				${f:h(theme.description)}
+				href="/projects/show?year=${f:h(year)}"
+				title="Projects by this year">${f:h(year)}</a></h2>
 				<br>
 				<br>
 			</c:forEach>
-			<p><a href="/years">Browse Project By Year</a></p>
+			<p><a href="/themes/">Browse Project By Themes</a></p>
 		</div>
 	</div>
 </div>
 
-
 <jsp:include page="/common/footer.jsp" />
-
