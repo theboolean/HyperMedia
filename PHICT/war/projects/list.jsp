@@ -10,18 +10,16 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="#a">aaaa</a> &nbsp; &gt; &nbsp; <a href="#b">bbbb</a>
+			<a href="/projects/">All projects</a>
 		</div>
 
 		<div id="content">
+		    <p> Here you can find a list of all our projects, ordered by descending join date to the program: </p>
 			<c:forEach var="project" items="${projects}">
-				<h1>
-					<a href="show?key=${f:h(project.id)}" title="Go to project's home">
-						${f:h(project.name)} </a>
-				</h1>
-	 	  		${f:h(project.description)}
-	  	  		<br>
-				<br>
+			    <div class="project">
+					<h2> <a href="show?key=${f:h(project.id)}" title="Go to project's home">${f:h(project.name)}</a> </h2>
+		 	  		${ project.description }
+	  	  		</div>
 			</c:forEach>
 		</div>
 	</div>

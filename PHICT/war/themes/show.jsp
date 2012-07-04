@@ -14,12 +14,12 @@
 		</div>
 
 		<div id="content">
-		    <p> ${f:h(theme.description)} </p>
+		    <p> ${ theme.description } </p>
 		    <p> Here you can find a list of our projects concerning <i>${f:h(theme.name)}</i>: </p>
 			<c:forEach var="project" items="${projects}">
 			    <div class="project">
 				    <h2> <a href="/projects/show?key=${f:h(project.id)}" title="Go to project's home">${f:h(project.name)}</a> </h2>
-	 	  		    ${f:h(project.description)}
+	 	  		    ${ project.description }
 	  	  		</div>
 			</c:forEach>
 		</div>

@@ -38,6 +38,7 @@ public class ShowController extends PhictController {
         Project project = projectManager.select(projectKey);
         List<Activity> projectActivities = project.getActivities();
         requestScope("project", project);
+        requestScope("projectKey", project.getId());
         requestScope("projectActivities", projectActivities);
         return forward("list.jsp");
     }

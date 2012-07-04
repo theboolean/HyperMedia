@@ -10,16 +10,29 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="#a">aaaa</a> &nbsp; &gt; &nbsp; <a href="#b">bbbb</a>
+			<a href="/projects/">All projects</a> &nbsp; &gt; &nbsp; 
+			<a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp;
+			<a href="/activities/show?project=${f:h(projectKey)}">Activities</a> &nbsp; &gt; &nbsp;
+			This
 		</div>
 
 		<div id="content">
+		    <div class="postit">
+                Related content:
+                <ul>
+                    <li> <a href="/results/show?activity=${f:h(activity.id)}" title="Results of this activity">Results</a> </li>
+                    <li> <a href="/projects/show?key=${f:h(projectKey)}" title="Project of this activity">Related Project</a> </li>
+                </ul>
+            </div>
 			<p>
-				${f:h(activity.schedule)}<br /> ${f:h(activity.goals)}
+			    <h2>Schedule</h2>
+				${ activity.schedule }
 			</p>
-			<br />Semantic links: <br /> 
-			<a href="/results/show?activity=${f:h(activity.id)}" title="Results of this activity">Results</a> <br />
-			<a href="/projects/show?key=${f:h(projectKey)}" title="Project of this activity">Related Project</a> <br />
+			
+			<p>
+			    <h2>Goals</h2>
+			    ${ activity.goals }
+			</p>
 		</div>
 	</div>
 </div>

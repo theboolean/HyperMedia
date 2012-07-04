@@ -10,18 +10,33 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="#a">aaaa</a> &nbsp; &gt; &nbsp; <a href="#b">bbbb</a>
+			<c:choose> 
+                <c:when test="${project == null}"> 
+                    <a href="/activities/">All Activities</a>
+                </c:when> 
+                <c:otherwise> 
+                    <a href="/projects/">Projects</a> &nbsp; &gt; &nbsp; <a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; Activities
+                </c:otherwise> 
+            </c:choose>
 		</div>
 
 		<div id="content">
+		    <c:choose> 
+			    <c:when test="${project == null}"> 
+			        <p> This is a raw list of all recent activities. Be ware: list items are unrelated and presented only for a matter
+                    of completeness. This list is not intended to be browsed directly. Please, use the <a href="/themes/" title="Themes">theme section</a>
+                    to select a project of your choice and then proceed to view its activities. </p>
+		        </c:when> 
+			    <c:otherwise> 
+			        <p> The <i>${f:h(project.name)}</i> project has the following list of activities:</p>
+			    </c:otherwise> 
+			</c:choose> 
+			
+		    <ul>
 			<c:forEach var="activity" items="${projectActivities}">
-				<h2>
-					<a href="/activities/show?key=${f:h(activity.id)}"
-						title="Go to activity's home"> ${f:h(activity.goals)}</a>
-				</h2>
-		    <br>
-				<br>
+			    <li> <a href="/activities/show?key=${f:h(activity.id)}" title="Go to activity's home"> ${f:h(activity.goals)}</a> </li>
 			</c:forEach>
+			</ul>
 		</div>
 	</div>
 </div>

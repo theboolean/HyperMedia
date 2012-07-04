@@ -17,7 +17,7 @@
 		    <c:forEach var="theme" items="${themes}">
 			    <div class="theme">
 					<h2><a href="/themes/show?key=${f:h(theme.id)}" title="Projects by this theme">${f:h(theme.name)}</a></h2>
-					${f:h(theme.description)}
+					${ theme.description }
 			    </div>
 			</c:forEach>
 		</div>
