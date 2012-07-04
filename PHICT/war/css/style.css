@@ -163,3 +163,33 @@ a {
 .theme, .project {
 	margin-bottom: 30px;
 }
+
+.postit {
+	float:left; 
+	padding-top: 50px; 
+	text-align:center; 
+	width: 180px; 
+	height: 170px; 
+	margin-right: 10px;
+	background: url('/images/grey-post-it.jpg') no-repeat;
+}
+
+.postit * {
+	line-height: 25px;
+}
+
+.postit ul {
+	margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+.tabContent h2 {
+	margin-bottom: 5px;
+}
+
+.tabContent .tabChanger {
+	font-size: 0.8em;
+	margin-bottom: 25px;
+}

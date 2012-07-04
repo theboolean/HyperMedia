@@ -7,27 +7,61 @@
 	<jsp:param name="pageName" value="project Show" />
 </jsp:include>
 
+<script type="text/javascript">
+$(function(){
+	$(".tabChanger a").click(function(e) {
+        e.preventDefault();
+        
+		var tabName = $(this).attr("href");
+		var tabTitle = $(this).attr("title");
+		
+		$(".tabContent").fadeOut(500, function() {
+			$(this).find("h2").text(tabTitle);
+			$(this).find(".tab").css("display", "none");
+			$(this).find("." + tabName).css("display", "block");
+			$(this).fadeIn();
+		});
+		
+	});
+})
+</script>
+
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="#a">aaaa</a> &nbsp; &gt; &nbsp; <a href="#b">bbbb</a>
+			<a href="/projects/">Projects</a> &nbsp; &gt; &nbsp; ${f:h(project.name)}
 		</div>
 
 		<div id="content">
-			<h1>${f:h(project.name)}</h1>
-			${f:h(project.description)}
-			<br />
-			<br />
-			${f:h(project.mainGoals)}
-			<br /> <br /> Semantic links: <br /> <a
-				href="/activities/show?project=${f:h(projectKey)}"
-				title="Activities for this project">Activities</a> <br /> <a
-				href="/events/show?project=${f:h(projectKey)}"
-				title="Events for this project">Events</a> <br /> <a
-				href="/partners/show?project=${f:h(projectKey)}"
-				title="Partners for this project">Partners</a> <br /> <a
-				href="/results/show?project=${f:h(projectKey)}"
-				title="Important results of this project">Important Results</a>
+		    <div class="postit">
+		        Related content:
+		        <ul>
+		            <li> <a href="/activities/show?project=${f:h(projectKey)}" title="Activities for this project">Activities</a> </li>
+		            <li> <a href="/events/show?project=${f:h(projectKey)}" title="Events for this project">Events</a> </li> 
+		            <li> <a href="/partners/show?project=${f:h(projectKey)}" title="Partners for this project">Partners</a> </li>
+		            <li> <a href="/results/show?project=${f:h(projectKey)}" title="Important results of this project">Important Results</a> </li>
+                </ul>
+		    </div>
+
+		    <div class="tabContent">
+		        <h2>Description</h2>
+		        <div class="tabChanger">
+		            Change tab: 
+		            <a href="projectDescription" title="Description">Description</a>, 
+                    <a href="mainGoals" title="Main Goals">Main Goals</a>, 
+                    <a href="publicDocumentation" title="Public Documentation">Public Documentation</a>
+                </div>
+                
+                <div class="tab projectDescription">
+                    ${ project.description }
+                </div>
+                <div class="tab mainGoals" style="display: none;">
+                    ${ project.mainGoals }
+                </div>
+                <div class="tab publicDocumentation" style="display: none;">
+                    ${ project.publicDocumentation }
+                </div>
+		    </div>
 		</div>
 	</div>
 </div>
