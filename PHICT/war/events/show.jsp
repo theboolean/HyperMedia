@@ -18,6 +18,10 @@
 			<br /> <br /> Semantic links: <br /> 
 			<a href="/projects/show?key=${f:h(projectKey)}" title="Related Project">Related Project</a>
 		</div>
+		
+		<div id="navigation">
+			<a href="#">Previous Event</a> &nbsp; | &nbsp; <a href="/events/show?project=${f:h(projectKey)}">All Events</a> &nbsp; | &nbsp; <a href="#">Next Event</a>
+		</div>
 	</div>
 </div>
 

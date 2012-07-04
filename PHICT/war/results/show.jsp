@@ -16,6 +16,10 @@
 		<div id="content">
 			<p>${f:h(result.overview)}</p>
 		</div>
+		
+		<div id="navigation">
+			<a href="#">Previous Result</a> &nbsp; | &nbsp; <a href="/results/show?activity=${f:h(activityKey)}">All Result</a> &nbsp; | &nbsp; <a href="#">Next Result</a>
+		</div>
 	</div>
 </div>
 

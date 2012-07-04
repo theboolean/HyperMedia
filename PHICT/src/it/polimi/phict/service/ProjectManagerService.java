@@ -31,8 +31,9 @@ public class ProjectManagerService extends ModelManagerService<Project> {
     public Project create(Map<String, Object> rawData) {
         Project project = new Project();
         BeanUtil.copy(rawData, project);
-        
-        Theme theme = ThemeManagerService.get().select((Key) rawData.get("theme"));
+
+        Theme theme =
+            ThemeManagerService.get().select((Key) rawData.get("theme"));
         project.getThemeRef().setModel(theme);
 
         Transaction transaction = Datastore.beginTransaction();
@@ -67,10 +68,9 @@ public class ProjectManagerService extends ModelManagerService<Project> {
                 projects.add(p);
             }
         }
-        //TODO elementi di projects in ordine crescente
         return projects;
     }
-    
+
     public List<Project> getProjectsByEndYear() {
         List<Project> projects = new ArrayList<Project>();
         for (Project p : selectAll()) {
@@ -79,5 +79,20 @@ public class ProjectManagerService extends ModelManagerService<Project> {
             }
         }
         return projects;
+    }
+
+    /**
+     * @return a ordinate list of years in witch have started at least one
+     *         project
+     */
+    public List<Integer> getAllProjectsYears() {
+        List<Integer> years = new ArrayList<Integer>();
+        for (Project p : selectAll()) {
+            if (!years.contains(p.getStartYear())) {
+                years.add(p.getStartYear());
+            }
+        }
+        // TODO years in ordine crescente
+        return years;
     }
 }

@@ -20,6 +20,10 @@
 				href="/partners/show?researcher=${f:h(researcherKey)}"
 				title="Partner affiliation">Partner affiliation</a>
 		</div>
+		
+		<div id="navigation">
+			<a href="#">Previous Researcher</a> &nbsp; | &nbsp; <a href="/researchers/show?partner=${f:h(partnerKey)}">All Researcher</a> &nbsp; | &nbsp; <a href="#">Next Resarcher</a>
+		</div>
 	</div>
 </div>
 

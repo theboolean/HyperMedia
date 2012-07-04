@@ -21,6 +21,10 @@
 				href="/projects/show?partner=${f:h(partnerKey)}"
 				title="Projects of this partner">Projects</a>
 		</div>
+		
+		<div id="navigation">
+			<a href="#">Previous Partner</a> &nbsp; | &nbsp; <a href="/partners/">All Partners</a> &nbsp; | &nbsp; <a href="#">Next Partner</a>
+		</div>
 	</div>
 </div>
 
