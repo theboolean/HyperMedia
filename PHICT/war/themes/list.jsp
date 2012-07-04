@@ -10,19 +10,16 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="/themes/">All Themes</a>
+			All Themes
 		</div>
 
 		<div id="content">
-			<c:forEach var="theme" items="${themes}">
-				<h2><a
-				href="/themes/show?key=${f:h(theme.id)}"
-				title="Projects by this theme">${f:h(theme.name)}</a></h2>
-				${f:h(theme.description)}
-				<br>
-				<br>
+		    <c:forEach var="theme" items="${themes}">
+			    <div class="theme">
+					<h2><a href="/themes/show?key=${f:h(theme.id)}" title="Projects by this theme">${f:h(theme.name)}</a></h2>
+					${f:h(theme.description)}
+			    </div>
 			</c:forEach>
-			<p><a href="/years">Browse Project By Year</a></p>
 		</div>
 	</div>
 </div>

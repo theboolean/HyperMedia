@@ -10,18 +10,17 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="/Themes">All Themes</a> &nbsp; &gt; &nbsp; <a href="#">Projects By Theme</a>
+			<a href="/themes/">All Themes</a> &nbsp; &gt; &nbsp; ${f:h(theme.name)}
 		</div>
 
 		<div id="content">
+		    <p> ${f:h(theme.description)} </p>
+		    <p> Here you can find a list of our projects concerning <i>${f:h(theme.name)}</i>: </p>
 			<c:forEach var="project" items="${projects}">
-				<h1>
-					<a href="show?key=${f:h(project.id)}" title="Go to project's home">
-						${f:h(project.name)} </a>
-				</h1>
-	 	  		${f:h(project.description)}
-	  	  		<br>
-				<br>
+			    <div class="project">
+				    <h2> <a href="/projects/show?key=${f:h(project.id)}" title="Go to project's home">${f:h(project.name)}</a> </h2>
+	 	  		    ${f:h(project.description)}
+	  	  		</div>
 			</c:forEach>
 		</div>
 	</div>

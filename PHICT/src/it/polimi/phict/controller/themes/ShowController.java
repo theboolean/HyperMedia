@@ -30,6 +30,7 @@ public class ShowController extends PhictController {
         Theme theme = themeManager.select(themeKey);
         List<Project> projects = theme.getProjects();
         requestScope("projects", projects);
+        requestScope("theme", theme);
         return forward("show.jsp");
     }
 }

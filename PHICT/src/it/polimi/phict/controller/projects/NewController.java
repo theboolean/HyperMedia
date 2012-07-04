@@ -1,5 +1,7 @@
 package it.polimi.phict.controller.projects;
 
+import java.util.Map;
+
 import it.polimi.phict.controller.PhictController;
 import it.polimi.phict.meta.ProjectMeta;
 import it.polimi.phict.service.ProjectManagerService;
@@ -26,7 +28,10 @@ public class NewController extends PhictController {
             return reportValidationErrors(validators.getErrors());
         }
 
-        projectManager.create(new RequestMap(request));
+        Map<String, Object> map = new RequestMap(request);
+        map.put("theme", parseKeyParameter("theme"));
+        projectManager.create(map);
+        
         return forward("../admin.jsp");
     }
 }
