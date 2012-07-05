@@ -15,7 +15,7 @@
                     All Activities
                 </c:when> 
                 <c:otherwise> 
-                    <a href="/projects/">Projects</a> &nbsp; &gt; &nbsp; <a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; Activities
+                    <a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a> &nbsp; &gt; &nbsp; <a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; Activities
                 </c:otherwise> 
             </c:choose>
 		</div>
