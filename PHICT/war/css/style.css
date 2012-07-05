@@ -89,7 +89,6 @@ body {
 .mainTitle+.slogan {
 	float: right;
 	font-family: Biolinum;
-	font-style: italic;
 	font-size: 18px;
 	line-height: 45px;
 	color: #555;
@@ -123,11 +122,12 @@ body {
 }
 
 #landmarks li a:hover {
-	color: #1a8cfa;
-	text-shadow: #ddd 3px 3px 5px;
+	text-decoration: underline;
 }
 
 #landmarks .selected a {
+	color: #1a8cfa;
+	text-shadow: #ddd 3px 3px 5px;
 	border-radius: 5px;
 	box-shadow: #999 0px 0px 10px;
 	background-color: rgba(241, 241, 241, 0.5);
