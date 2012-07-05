@@ -10,11 +10,28 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			All Partners
+		<c:choose> 
+                <c:when test="${project == null}"> 
+                    All Partners
+                </c:when> 
+                <c:otherwise> 
+                    <a href="/projects/">Projects</a> &nbsp; &gt; &nbsp; 
+                    <a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; 
+                    Involved partners
+                </c:otherwise> 
+            </c:choose>
 		</div>
 
 		<div id="content">
-			<p> All the partners that are participating in the program: </p>
+			<c:choose> 
+			    <c:when test="${project == null}"> 
+			        <p> This is a complete list of all our affiliates. You can find academic institutions and
+			        organizations supporting the program with their solid contributions:</p>
+		        </c:when> 
+			    <c:otherwise> 
+			        <p> The <i>${f:h(project.name)}</i> project is powered by researchers belonging to those institutions:</p>
+			    </c:otherwise> 
+			</c:choose>
 			<c:forEach var="partner" items="${projectPartners}">
 			    <div class="project">
 					<h2> <a href="/partners/show?key=${f:h(partner.id)}" title="Go to partner's home"> ${f:h(partner.name)}</a> </h2>

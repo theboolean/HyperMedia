@@ -12,7 +12,7 @@
 		<div id="breadcrumbs">
 			<c:choose> 
                 <c:when test="${project == null}"> 
-                    <a href="/activities/">All Activities</a>
+                    All Activities
                 </c:when> 
                 <c:otherwise> 
                     <a href="/projects/">Projects</a> &nbsp; &gt; &nbsp; <a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; Activities

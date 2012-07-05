@@ -2,6 +2,7 @@ package it.polimi.phict.controller.partners;
 
 import it.polimi.phict.controller.PhictController;
 import it.polimi.phict.model.Partner;
+import it.polimi.phict.model.Project;
 import it.polimi.phict.service.PartnerManagerService;
 import it.polimi.phict.service.ProjectManagerService;
 import it.polimi.phict.service.ResearcherManagerService;
@@ -44,8 +45,10 @@ public class ShowController extends PhictController {
     }
     
     private Navigation showProjectPartners(Key projectKey) {
+        Project project = projectManager.select(projectKey);
         List<Partner> projectPartners =
             projectManager.getProjectPartners(projectKey);
+        requestScope("project", project);
         requestScope("projectPartners", projectPartners);
         return forward("list.jsp");
     }

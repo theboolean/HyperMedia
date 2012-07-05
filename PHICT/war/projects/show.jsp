@@ -38,7 +38,7 @@ $(function(){
 		        <ul>
 		            <li> <a href="/activities/show?project=${f:h(projectKey)}" title="Activities for this project">Activities</a> </li>
 		            <li> <a href="/events/show?project=${f:h(projectKey)}" title="Events for this project">Events</a> </li> 
-		            <li> Partners </li>
+		            <li> <a href="/partners/show?project=${f:h(projectKey)}" title="Partners involved in this project">Partners</a> </li>
 		            <li> Important Results </li>
                 </ul>
 		    </div>
