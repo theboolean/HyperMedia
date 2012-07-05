@@ -32,7 +32,7 @@ public class ShowController extends PhictController {
         if (requestParameterExists("key")) {
             Key key = parseKeyParameter("key");
             Project project = projectManager.select(key);
-
+            requestScope("theme", project.getTheme());
             requestScope("project", project);
             requestScope("projectKey", project.getId());
 

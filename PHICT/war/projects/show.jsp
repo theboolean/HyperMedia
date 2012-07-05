@@ -29,7 +29,7 @@ $(function(){
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="/projects/">Projects</a> &nbsp; &gt; &nbsp; ${f:h(project.name)}
+			<a href="/themes/show?key=${f:h(theme.id)}">${f:h(theme.name)}</a> &nbsp; &gt; &nbsp; ${f:h(project.name)}
 		</div>
 
 		<div id="content">
