@@ -1,9 +1,19 @@
 @font-face {
     font-family: 'DINEngschrift';
-    src: url('dine.eot');
-    src: url('dine.eot?#iefix') format('embedded-opentype'),
-         url('dine.woff') format('woff'),
-         url('dine.ttf') format('truetype');
+    src: url('font/dine.eot');
+    src: url('font/dine.eot?#iefix') format('embedded-opentype'),
+         url('font/dine.woff') format('woff'),
+         url('font/dine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Biolinum';
+    src: url('font/biolinum.eot');
+    src: url('font/biolinum?#iefix') format('embedded-opentype'),
+         url('font/biolinum.woff') format('woff'),
+         url('font/biolinum.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -78,7 +88,7 @@ body {
 
 .mainTitle+.slogan {
 	float: right;
-	font-family: DINEngschrift;
+	font-family: Biolinum;
 	font-style: italic;
 	font-size: 18px;
 	line-height: 45px;
