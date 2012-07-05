@@ -29,7 +29,7 @@
             });
         });
         
-        $("img.background").load(function() { $(this).fadeIn(); });
+        //$("img.background").load(function() { $(this).fadeIn(); });
     });
     </script>
 </head>
