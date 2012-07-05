@@ -1,9 +1,13 @@
 package it.polimi.phict.service;
 
 import it.polimi.phict.meta.ProjectMeta;
-import it.polimi.phict.model.*;
+import it.polimi.phict.model.Membership;
+import it.polimi.phict.model.Partner;
+import it.polimi.phict.model.Project;
+import it.polimi.phict.model.Theme;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -59,12 +63,7 @@ public class ProjectManagerService extends ModelManagerService<Project> {
     public List<Project> getProjectsByStartYear(Integer year) {
         List<Project> projects = new ArrayList<Project>();
         for (Project p : selectAll()) {
-            /*
-             * TODO rimuovere controllo != null, necessario finchè esistono nel
-             * db projects senza start year, sarà impossibile che ciò avvenga in
-             * futuro visto che startYear è un campo obbligatorio
-             */
-            if (p.getStartYear() != null && p.getStartYear().equals(year)) {
+            if (p.getStartYear().equals(year)) {
                 projects.add(p);
             }
         }
@@ -92,7 +91,7 @@ public class ProjectManagerService extends ModelManagerService<Project> {
                 years.add(p.getStartYear());
             }
         }
-        // TODO years in ordine crescente
+        Collections.sort(years);
         return years;
     }
 }

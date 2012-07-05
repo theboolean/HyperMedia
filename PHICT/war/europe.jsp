@@ -10,7 +10,7 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="#">EU Commission</a>
+			EU Commission
 		</div>
 
 		<div id="content">
