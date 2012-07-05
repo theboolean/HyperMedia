@@ -48,7 +48,6 @@ public class ShowController extends PhictController {
         requestScope("event", event);
         requestScope("project", project);
         requestScope("projectTheme",project.getTheme());
-        requestScope("projectKey", project.getId());
         return forward("show.jsp");
     }
 }
