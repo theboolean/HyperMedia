@@ -49,6 +49,7 @@ public class ShowController extends PhictController {
         List<Partner> projectPartners =
             projectManager.getProjectPartners(projectKey);
         requestScope("project", project);
+        requestScope("projectTheme", project.getTheme());
         requestScope("projectPartners", projectPartners);
         return forward("list.jsp");
     }

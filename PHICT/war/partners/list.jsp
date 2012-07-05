@@ -15,8 +15,8 @@
                     All Partners
                 </c:when> 
                 <c:otherwise> 
-                    <a href="/projects/">Projects</a> &nbsp; &gt; &nbsp; 
-                    <a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; 
+                    <a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a> &nbsp; &gt; &nbsp; 
+                    <a href="/projects/show?key=${f:h(project.id)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; 
                     Involved partners
                 </c:otherwise> 
             </c:choose>

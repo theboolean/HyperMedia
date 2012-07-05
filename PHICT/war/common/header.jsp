@@ -80,7 +80,7 @@
                     <img class="illustration" src="/images/eu_flag_small.jpg" />
                 </li>
                 <li>
-                    <a href="/results"> Program Results </a>
+                    <a href="/results"> Program Results</a>
                     <span class="description"> The PHICT program has been operative since the end of 2011 and a few projects begun to show significant results. This section outlines the main trends of the program.</span>
                     <img class="illustration" src="/images/ict_small.jpg" />
                 </li>
