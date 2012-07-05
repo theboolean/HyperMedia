@@ -10,7 +10,7 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="/partners/">All Partners</a>
+			All Partners
 		</div>
 
 		<div id="content">
