@@ -1,6 +1,11 @@
 @font-face {
-	font-family: 'DINEngschrift';
-	src: url('dine.ttf');
+    font-family: 'DINEngschrift';
+    src: url('dine.eot');
+    src: url('dine.eot?#iefix') format('embedded-opentype'),
+         url('dine.woff') format('woff'),
+         url('dine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html,body {
