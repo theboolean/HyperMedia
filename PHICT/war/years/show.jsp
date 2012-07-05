@@ -10,20 +10,21 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="#">All years</a>
+			<a href="/years/">All Years</a> &nbsp; &gt; &nbsp; ${f:h(year)}
 		</div>
 
 		<div id="content">
-			<c:forEach var="year" items="${years}">
-				<h2><a
-				href="/projects/show?year=${f:h(year)}"
-				title="Projects by this year">${f:h(year)}</a></h2>
-				<br>
-				<br>
+		    <p> ${ theme.description } </p>
+		    <p> Here you can find a list of our projects of <i>${f:h(year)}</i>: </p>
+			<c:forEach var="project" items="${projects}">
+			    <div class="project">
+				    <h2> <a href="/projects/show?key=${f:h(project.id)}" title="Go to project's home">${f:h(project.name)}</a> </h2>
+	 	  		    ${ project.description }
+	  	  		</div>
 			</c:forEach>
-			<p><a href="/themes/">Browse Project By Themes</a></p>
 		</div>
 	</div>
 </div>
 
 <jsp:include page="/common/footer.jsp" />
+

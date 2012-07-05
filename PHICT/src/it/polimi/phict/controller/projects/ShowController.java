@@ -1,8 +1,15 @@
 package it.polimi.phict.controller.projects;
 
 import it.polimi.phict.controller.PhictController;
-import it.polimi.phict.model.*;
-import it.polimi.phict.service.*;
+import it.polimi.phict.model.Activity;
+import it.polimi.phict.model.Event;
+import it.polimi.phict.model.Project;
+import it.polimi.phict.model.Theme;
+import it.polimi.phict.service.ActivityManagerService;
+import it.polimi.phict.service.EventManagerService;
+import it.polimi.phict.service.PartnerManagerService;
+import it.polimi.phict.service.ProjectManagerService;
+import it.polimi.phict.service.ThemeManagerService;
 
 import java.util.List;
 
@@ -51,14 +58,9 @@ public class ShowController extends PhictController {
             Key themeKey = parseKeyParameter("theme");
             return showThemedProjects(themeKey);
         }
-        
-        if (requestParameterExists("year")) {
-            Integer year = Integer.parseInt(request.getParameter("year"));
-            return showYearsProject(year);
-        }
 
         throw new QueryException(
-            "You must specify either a project you want to view or a valid event, activity, year or partner key.");
+            "You must specify either a project you want to view or a valid event, activity or partner key.");
     }
 
     private Navigation showEventProject(Key eventKey) {
@@ -85,12 +87,6 @@ public class ShowController extends PhictController {
     private Navigation showThemedProjects(Key themeKey) {
         Theme theme = themeManager.select(themeKey);
         List<Project> projects = theme.getProjects();
-        requestScope("projects", projects);
-        return forward("list.jsp");
-    }
-    
-    private Navigation showYearsProject(Integer year) {
-        List<Project> projects = projectManager.getProjectsByStartYear(year);
         requestScope("projects", projects);
         return forward("list.jsp");
     }
