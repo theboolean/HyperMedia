@@ -15,11 +15,12 @@
 
 		<div id="content">
 			<p><a href="/themes/">You can also browse Project by Themes</a></p>
+			
+			<ul>
 			<c:forEach var="year" items="${years}">
-				<h2><a href="/years/show?key=${f:h(year)}" title="Projects of this year">${f:h(year)}</a></h2>
-				<br>
-				<br>
+				<li> <a href="/years/show?key=${f:h(year)}" title="Projects of this year">${f:h(year)}</a> </li>
 			</c:forEach>
+			</ul>
 		</div>
 	</div>
 </div>

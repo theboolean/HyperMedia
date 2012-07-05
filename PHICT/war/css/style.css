@@ -130,7 +130,7 @@ body {
 #landmarks .selected a {
 	border-radius: 5px;
 	box-shadow: #999 0px 0px 10px;
-	background-color: #f1f1f1;
+	background-color: rgba(241, 241, 241, 0.5);
 }
 
 a {

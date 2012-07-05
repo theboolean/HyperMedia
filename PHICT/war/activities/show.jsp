@@ -12,8 +12,7 @@
 		<div id="breadcrumbs">
 			<a href="/projects/">All projects</a> &nbsp; &gt; &nbsp; 
 			<a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp;
-			<a href="/activities/show?project=${f:h(projectKey)}">Activities</a> &nbsp; &gt; &nbsp;
-			This
+			<a href="/activities/show?project=${f:h(projectKey)}">Activities</a>
 		</div>
 
 		<div id="content">
@@ -33,6 +32,8 @@
 			    <h2>Goals</h2>
 			    ${ activity.goals }
 			</p>
+			
+			<div class="clear"></div>
 		</div>
 	</div>
 </div>

@@ -10,18 +10,21 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="#">History</a>
+			<a href="/history">History</a>
 		</div>
 
 		<div id="content">
+			<p> Here you can browse all our projects that have been already completed. </p>
 			<c:forEach var="project" items="${projects}">
-				<h1>
-					<a href="/projects/show?key=${f:h(project.id)}" title="Go to project's home">
-						${f:h(project.name)} </a>
-				</h1>
-	 	  		${f:h(project.description)}
-	  	  		<br>
-				<br>
+				<div class="project">
+					<h2> 
+						<a href="/projects/show?key=${f:h(project.id)}"  title="Go to project's home"> 
+							${f:h(project.name)} 
+					    </a> 
+					    (${ project.startYear } - ${ project.endYear })
+					</h2>
+	 	  			${ project.description }
+	  	  		</div>
 			</c:forEach>
 		</div>
 	</div>

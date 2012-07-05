@@ -16,12 +16,13 @@
         var sponsorContent = $("#sponsor *");
         
         var firstInvocationTime = (new Date()).getTime();
-        var defaultTimeout = 3000;
+        var hovering = false;
+        var defaultTimeout = 7000;
         
         var transition = function(index) {
         	if (index < 0) {
         		var currentTime = (new Date()).getTime();
-        		if (currentTime - firstInvocationTime < defaultTimeout) return;
+        		if ((currentTime - firstInvocationTime < defaultTimeout) || hovering) return;
         		firstInvocationTime = currentTime;
             	slideshowCounter = (slideshowCounter + 1) % slideshowSize;	 
         	} else {
@@ -47,11 +48,13 @@
         
         landmarks
         	.mouseenter(function() {
+        		hovering = true;
 	        	clearInterval(timer);
 	        	timer = "";
 	        	transition($(this).index());
 	        })
 	        .mouseout(function() {
+	        	hovering = false;
 	        	timer = setInterval(function() { transition(-1); }, defaultTimeout);
 	        });
     });
