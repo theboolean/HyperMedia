@@ -11,14 +11,11 @@
 	<div id="innerContainer">
 		<div id="breadcrumbs">
 		<c:choose> 
-                <c:when test="${project == null}"> 
-                    All Partners
-                </c:when> 
-                <c:otherwise> 
+                <c:when test="${project != null}"> 
                     <a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a> &nbsp; &gt; &nbsp; 
                     <a href="/projects/show?key=${f:h(project.id)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; 
                     Involved partners
-                </c:otherwise> 
+                </c:when> 
             </c:choose>
 		</div>
 

@@ -47,6 +47,7 @@ public class ShowController extends PhictController {
         Project project = event.getProject();
         requestScope("event", event);
         requestScope("project", project);
+        requestScope("projectTheme",project.getTheme());
         requestScope("projectKey", project.getId());
         return forward("show.jsp");
     }

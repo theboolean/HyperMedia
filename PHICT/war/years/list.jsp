@@ -9,10 +9,6 @@
 
 <div id="mainContainer">
 	<div id="innerContainer">
-		<div id="breadcrumbs">
-			All Years
-		</div>
-
 		<div id="content">
 			<p><a href="/themes/">You can also browse Project by Themes</a></p>
 			

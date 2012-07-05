@@ -9,10 +9,6 @@
 
 <div id="mainContainer">
 	<div id="innerContainer">
-		<div id="breadcrumbs">
-			<a href="/projects/">All projects</a>
-		</div>
-
 		<div id="content">
 		    <p> Here you can find a list of all our projects, ordered by descending join date to the program: </p>
 			<c:forEach var="project" items="${projects}">

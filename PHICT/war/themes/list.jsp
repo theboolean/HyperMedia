@@ -9,10 +9,6 @@
 
 <div id="mainContainer">
 	<div id="innerContainer">
-		<div id="breadcrumbs">
-			All Themes
-		</div>
-
 		<div id="content">
 			<p><a href="/years/">You can also browse Project by Years</a></p>
 		    <c:forEach var="theme" items="${themes}">

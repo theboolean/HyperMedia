@@ -10,9 +10,9 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="/projects/">All projects</a> &nbsp; &gt; &nbsp; 
+			<a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a> &nbsp; &gt; &nbsp; 
 			<a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp;
-			<a href="/events/show?project=${f:h(projectKey)}">Events</a>
+			Events
 		</div>
 
 		<div id="content">
