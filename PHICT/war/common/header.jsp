@@ -7,9 +7,6 @@
     
     <script type="text/javascript">
     $(function() {
-        var landmarksWidth = 0;
-        $("#landmarks li").each(function() { landmarksWidth += $(this).outerWidth(true); });
-        $("#landmarks").css("width", (landmarksWidth + 20) + "px");
         
         var illustration = $("#sponsor .illustration");
         var description = $("#sponsor .description");

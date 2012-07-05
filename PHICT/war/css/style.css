@@ -87,6 +87,7 @@ body {
 #landmarks {
 	margin: auto;
 	margin-top: 30px;
+	text-align: center;
 	clear: both;
 	font-family: DINEngschrift;
 	font-size: 20px;
