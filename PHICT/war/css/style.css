@@ -112,20 +112,25 @@ body {
 
 #landmarks li {
 	display: inline;
-	padding: 7px 10px 7px 10px;
 	margin-left: 10px;
 }
 
 #landmarks li a {
+	padding: 7px 10px 7px 10px;
 	text-decoration: none;
 	color: transparent;
 	text-shadow: #1a8cfa 0px 0px 2px;
 }
 
 #landmarks li a:hover {
-	text-decoration: none;
 	color: #1a8cfa;
 	text-shadow: #ddd 3px 3px 5px;
+}
+
+#landmarks .selected a {
+	border-radius: 5px;
+	box-shadow: #999 0px 0px 10px;
+	background-color: #f1f1f1;
 }
 
 a {

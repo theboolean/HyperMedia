@@ -7,26 +7,53 @@
     
     <script type="text/javascript">
     $(function() {
+        var landmarks = $("#landmarks li");
+        var slideshowCounter = 0;
+        var slideshowSize = landmarks.size();
         
         var illustration = $("#sponsor .illustration");
         var description = $("#sponsor .description");
         var sponsorContent = $("#sponsor *");
         
-        $("#landmarks li").mouseenter(function() {
-            var target = $(this);
+        var firstInvocationTime = (new Date()).getTime();
+        var defaultTimeout = 3000;
+        
+        var transition = function(index) {
+        	if (index < 0) {
+        		var currentTime = (new Date()).getTime();
+        		if (currentTime - firstInvocationTime < defaultTimeout) return;
+        		firstInvocationTime = currentTime;
+            	slideshowCounter = (slideshowCounter + 1) % slideshowSize;	 
+        	} else {
+        		slideshowCounter = index; 
+        	}
+        	
+            var target = $(landmarks.get(slideshowCounter));
             
             if (illustration.attr("src") == target.find(".illustration").attr("src")) {
                 return 0;
             }
-            
+
+        	landmarks.each(function() { $(this).removeClass("selected"); });
+        	target.addClass("selected");
             sponsorContent.fadeOut(function() {
                 illustration.attr("src", target.find(".illustration").attr("src"));
                 description.text(target.find(".description").text());
                 sponsorContent.fadeIn();
             });
-        });
+        };
         
-        //$("img.background").load(function() { $(this).fadeIn(); });
+        var timer = setInterval(function() { transition(-1); }, defaultTimeout);
+        
+        landmarks
+        	.mouseenter(function() {
+	        	clearInterval(timer);
+	        	timer = "";
+	        	transition($(this).index());
+	        })
+	        .mouseout(function() {
+	        	timer = setInterval(function() { transition(-1); }, defaultTimeout);
+	        });
     });
     </script>
 </head>
@@ -44,7 +71,7 @@
         
         <div id="landmarks">
             <ul>
-                <li> 
+                <li class="selected"> 
                     <a href="/europe">EU Commission</a>
                     <span class="description"> The european commission has invested over 2.45 billion euros in the PHICT program and is currently helping in the development of major projects that will improve our quality of life. Learn more about the commission and its objectives in this section. </span>
                     <img class="illustration" src="/images/eu_flag_small.jpg" />
