@@ -173,8 +173,8 @@ a {
 	background-color: rgb(240, 240, 240);
 }
 
-#content {
-	margin-top: 30px;
+#breadcrumbs + #content {
+	margin-top: 30px !important;
 }
 
 .theme h2, .project h2 {
