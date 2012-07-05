@@ -9,10 +9,6 @@
 
 <div id="mainContainer">
 	<div id="innerContainer">
-		<div id="breadcrumbs">
-			History
-		</div>
-
 		<div id="content">
 			<p> Here you can browse all our projects that have been already completed. </p>
 			<c:forEach var="project" items="${projects}">

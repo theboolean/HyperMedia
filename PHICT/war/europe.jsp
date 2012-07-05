@@ -9,10 +9,6 @@
 
 <div id="mainContainer">
 	<div id="innerContainer">
-		<div id="breadcrumbs">
-			EU Commission
-		</div>
-
 		<div id="content">
 			<p>Hello EU Commission !!!</p>
 		</div>

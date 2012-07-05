@@ -9,10 +9,6 @@
 
 <div id="mainContainer">
 	<div id="innerContainer">
-		<div id="breadcrumbs">
-			Program Results
-		</div>
-
 		<div id="content">
 			<p>Hello Program Results !!!</p>
 		</div>
