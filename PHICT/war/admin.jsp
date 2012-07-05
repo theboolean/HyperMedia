@@ -10,7 +10,7 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="admin">Admin Page</a>
+			Admin Page
 		</div>
 
 		<div id="content">
