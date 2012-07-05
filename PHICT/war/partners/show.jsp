@@ -10,21 +10,28 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="#a">aaaa</a> &nbsp; &gt; &nbsp; <a href="#b">bbbb</a>
+			<a href="/partners/">All partners</a> &nbsp; &gt; &nbsp; ${f:h(partner.name)}
 		</div>
 
 		<div id="content">
-			<h1>${f:h(partner.name)}</h1>
-			${f:h(partner.description)} <br /> <br /> Semantic links: <br /> <a
-				href="/researchers/show?partner=${f:h(partnerKey)}"
-				title="Researchers of this partner">Researchers</a> <br /> <a
-				href="/projects/show?partner=${f:h(partnerKey)}"
-				title="Projects of this partner">Projects</a>
+		    <div class="postit">
+		        Related content:
+		        <ul>
+		            <li> Researchers </li>
+		            <li> Projects </li>
+                </ul>
+		    </div>
+		
+			<h2>${f:h(partner.name)}</h2>
+			<p> ${ partner.description } </p> 
+			
+			
+			<div id="navigation">
+				<a href="#">Previous Partner</a> &nbsp; | &nbsp; <a href="/partners/">All Partners</a> &nbsp; | &nbsp; <a href="#">Next Partner</a>
+			</div>
 		</div>
 		
-		<div id="navigation">
-			<a href="#">Previous Partner</a> &nbsp; | &nbsp; <a href="/partners/">All Partners</a> &nbsp; | &nbsp; <a href="#">Next Partner</a>
-		</div>
+		<div class="clear"></div>
 	</div>
 </div>
 

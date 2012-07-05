@@ -20,6 +20,8 @@ body {
 	text-align: justify;
 }
 
+.clear { clear: both; }
+
 #mainContainer {
 	width: 800px;
 	margin: 0px auto;
