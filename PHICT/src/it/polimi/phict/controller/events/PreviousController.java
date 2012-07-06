@@ -22,7 +22,7 @@ public class PreviousController extends PhictController {
         if (requestParameterExists("project") && requestParameterExists("key")) {
             Key projectKey = parseKeyParameter("project");
             Key eventKey = parseKeyParameter("key");
-            return showNextEvent(eventKey, projectKey);
+            return showPreviousEvent(eventKey, projectKey);
         }
 
         throw new QueryException(
@@ -30,7 +30,7 @@ public class PreviousController extends PhictController {
 
     }
 
-    private Navigation showNextEvent(Key eventKey, Key projectKey) {
+    private Navigation showPreviousEvent(Key eventKey, Key projectKey) {
         Project project = projectManager.select(projectKey);
         Event event = eventManager.select(eventKey);
         List<Event> events = project.getEvents();
