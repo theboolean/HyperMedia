@@ -9,49 +9,49 @@
 
 <script type="text/javascript" src="/js/tabs.js"></script>
 <script type="text/javascript">
-$(function() {
-	makeTabs();
-});
+	$(function() {
+		makeTabs();
+	});
 </script>
 
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="/themes/show?key=${f:h(theme.id)}">${f:h(theme.name)}</a> &nbsp; &gt; &nbsp; ${f:h(project.name)}
+			<a href="/themes/show?key=${f:h(theme.id)}">${f:h(theme.name)}</a>
+			&nbsp; &gt; &nbsp; ${f:h(project.name)}
 		</div>
 
 		<div id="content">
-		    <div class="postit">
-		        Related content:
-		        <ul>
-		            <li> <a href="/activities/show?project=${f:h(projectKey)}" title="Activities for this project">Activities</a> </li>
-		            <li> <a href="/events/show?project=${f:h(projectKey)}" title="Events for this project">Events</a> </li> 
-		            <li> <a href="/partners/show?project=${f:h(projectKey)}" title="Partners involved in this project">Partners</a> </li>
-		            <li> Important Results </li>
-                </ul>
-		    </div>
+			<div class="postit">
+				Related content:
+				<ul>
+					<li><a href="/activities/show?project=${f:h(projectKey)}"
+						title="Activities for this project">Activities</a></li>
+					<li><a href="/events/show?project=${f:h(projectKey)}"
+						title="Events for this project">Events</a></li>
+					<li><a href="/partners/show?project=${f:h(projectKey)}"
+						title="Partners involved in this project">Partners</a></li>
+					<li>Important Results</li>
+				</ul>
+			</div>
 
-		    <div class="tabContent">
-		        <h2>Description</h2>
-		        <div class="tabChanger">
-		            Change tab: 
-		            <a href="projectDescription" title="Description">Description</a>, 
-                    <a href="mainGoals" title="Main Goals">Main Goals</a>, 
-                    <a href="publicDocumentation" title="Public Documentation">Public Documentation</a>
-                </div>
-                
-                <div class="tab projectDescription">
-                    ${ project.description }
-                </div>
-                <div class="tab mainGoals" style="display: none;">
-                    ${ project.mainGoals }
-                </div>
-                <div class="tab publicDocumentation" style="display: none;">
-                    ${ project.publicDocumentation }
-                </div>
-		    </div>
-		    
-		    
+			<div id="content-text" class="tabContent">
+				<h2>Description</h2>
+				<div class="tabChanger">
+					Change tab: <a href="projectDescription" title="Description">Description</a>,
+					<a href="mainGoals" title="Main Goals">Main Goals</a>, <a
+						href="publicDocumentation" title="Public Documentation">Public
+						Documentation</a>
+				</div>
+
+				<div class="tab projectDescription">${ project.description }</div>
+				<div class="tab mainGoals" style="display: none;">${
+					project.mainGoals }</div>
+				<div class="tab publicDocumentation" style="display: none;">
+					${ project.publicDocumentation }</div>
+			</div>
+
+
 			<div class="clear"></div>
 		</div>
 	</div>

@@ -24,8 +24,9 @@
 				</ul>
 			</div>
 
-
-			<p>${ event.presentation }</p>
+			<div id="content-text">
+				<p>${ event.presentation }</p>
+			</div>
 
 			<div class="clear"></div>
 		</div>

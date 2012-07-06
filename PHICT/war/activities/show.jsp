@@ -25,15 +25,18 @@
 						title="Project of this activity">Related Project</a></li>
 				</ul>
 			</div>
-			<p>
-			<h2>Schedule</h2>
-			${ activity.schedule }
-			</p>
+			<div id="content-text">
 
-			<p>
-			<h2>Goals</h2>
-			${ activity.goals }
-			</p>
+				<p>
+				<h2>Schedule</h2>
+				${ activity.schedule }
+				</p>
+
+				<p>
+				<h2>Goals</h2>
+				${ activity.goals }
+				</p>
+			</div>
 
 			<div class="clear"></div>
 
