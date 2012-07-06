@@ -70,7 +70,7 @@ public class ProjectManagerService extends ModelManagerService<Project> {
         return projects;
     }
 
-    public List<Project> getProjectsByEndYear() {
+    public List<Project> getFinishedProjects() {
         List<Project> projects = new ArrayList<Project>();
         for (Project p : selectAll()) {
             if (p.getEndYear() != null) {

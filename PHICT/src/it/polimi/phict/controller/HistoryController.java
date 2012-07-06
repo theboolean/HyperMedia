@@ -14,7 +14,7 @@ public class HistoryController extends Controller {
     
     @Override
     public Navigation run() throws Exception {
-        List<Project> projects = projectManager.getProjectsByEndYear();
+        List<Project> projects = projectManager.getFinishedProjects();
         requestScope("projects", projects);
         return forward("history.jsp");
     }

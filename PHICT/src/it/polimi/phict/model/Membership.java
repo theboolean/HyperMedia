@@ -6,6 +6,9 @@ import org.slim3.datastore.ModelRef;
 
 import com.google.appengine.api.datastore.Key;
 
+/**
+ * This is a bridge entity to support the many-to-many relationship between partners and projects.
+ */
 @Model
 public class Membership {
     @Attribute(primaryKey = true)
