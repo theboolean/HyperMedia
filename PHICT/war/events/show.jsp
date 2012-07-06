@@ -10,19 +10,34 @@
 <div id="mainContainer">
 	<div id="innerContainer">
 		<div id="breadcrumbs">
-			<a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a> &nbsp; &gt; &nbsp; 
-			<a href="/projects/show?key=${f:h(project.id)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp;
-			Events
+			<a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a>
+			&nbsp; &gt; &nbsp; <a href="/projects/show?key=${f:h(project.id)}">${f:h(project.name)}</a>
+			&nbsp; &gt; &nbsp; Events
 		</div>
 
 		<div id="content">
+			<div class="postit">
+				Related content:
+				<ul>
+					<li><a href="/projects/show?key=${f:h(project.id)}"
+						title="Project of this event">Related Project</a></li>
+				</ul>
+			</div>
+
+
 			<p>${ event.presentation }</p>
+
+			<div class="clear"></div>
 		</div>
-		
+
 		<div id="navigation">
-			<a href="/events/previous?project=${f:h(project.id)}&key=${f:h(event.id)}">Previous Event</a> &nbsp; | &nbsp; 
-			<a href="/events/show?project=${f:h(project.id)}">All Events</a> &nbsp; | &nbsp; 
-			<a href="/events/next?project=${f:h(project.id)}&key=${f:h(event.id)}">Next Event</a>
+			<a
+				href="/events/previous?project=${f:h(project.id)}&key=${f:h(event.id)}">Previous
+				Event</a> &nbsp; | &nbsp; <a
+				href="/events/show?project=${f:h(project.id)}">All Events</a> &nbsp;
+			| &nbsp; <a
+				href="/events/next?project=${f:h(project.id)}&key=${f:h(event.id)}">Next
+				Event</a>
 		</div>
 	</div>
 </div>
