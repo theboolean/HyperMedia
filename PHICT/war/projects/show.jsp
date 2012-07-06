@@ -7,23 +7,11 @@
 	<jsp:param name="pageName" value="project Show" />
 </jsp:include>
 
+<script type="text/javascript" src="/js/tabs.js"></script>
 <script type="text/javascript">
-$(function(){
-	$(".tabChanger a").click(function(e) {
-        e.preventDefault();
-        
-		var tabName = $(this).attr("href");
-		var tabTitle = $(this).attr("title");
-		
-		$(".tabContent").fadeOut(500, function() {
-			$(this).find("h2").text(tabTitle);
-			$(this).find(".tab").css("display", "none");
-			$(this).find("." + tabName).css("display", "block");
-			$(this).fadeIn();
-		});
-		
-	});
-})
+$(function() {
+	makeTabs();
+});
 </script>
 
 <div id="mainContainer">
