@@ -23,7 +23,7 @@
 
 		<div id="content">
 		<c:choose> 
-			    <c:when test="${project == null}"> 
+			    <c:when test="${activity == null}"> 
 			        <p> This is a raw list of all recent results. Be ware: list items are unrelated and presented only for a matter
                     of completeness. This list is not intended to be browsed directly. Please, use the <a href="/themes/" title="Themes">theme section</a>
                     to select a project of your choice, proceed to view its activities and then their results. </p>
@@ -33,7 +33,7 @@
 			    </c:otherwise> 
 			</c:choose> 
 			
-			<c:if test="${ empty projectActivities }">
+			<c:if test="${ empty projectResults }">
 				<p> <i> Sorry, there aren't any results in this section! </i> </p>
 			</c:if>
 			
