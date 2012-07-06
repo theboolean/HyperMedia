@@ -15,7 +15,7 @@
                     All Events
                 </c:when> 
                 <c:otherwise> 
-                    <a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a> &nbsp; &gt; &nbsp; <a href="/projects/show?key=${f:h(projectKey)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; 
+                    <a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a> &nbsp; &gt; &nbsp; <a href="/projects/show?key=${f:h(project.id)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; 
                     <a href="/activities/show?key=${f:h(activity.id)}">${f:h(activity.schedule)}</a> &nbsp; &gt; &nbsp; Results
                 </c:otherwise> 
             </c:choose>
