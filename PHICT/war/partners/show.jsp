@@ -25,14 +25,13 @@
 			<h2>${f:h(partner.name)}</h2>
 			<p> ${ partner.description } </p> 
 			
-			
+			<div class="clear"></div>
 			
 			<div id="navigation">
 				<a href="/partners/previous?key=${f:h(partnerKey)}" >Previous Partner</a> &nbsp; | &nbsp; <a href="/partners/">All Partners</a> &nbsp; | &nbsp; <a href="/partners/next?key=${f:h(partnerKey)}" >Next Partner</a>
 			</div>
 		</div>
 		
-		<div class="clear"></div>
 	</div>
 </div>
 
