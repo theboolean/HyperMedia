@@ -54,14 +54,22 @@ public class ShowController extends PhictController {
     private Navigation showActivityResults(Key activityKey) {
         Activity activity = activityManager.select(activityKey);
         List<Result> activityResults = (List<Result>) activity.getResults();
+        Project project = activity.getProject();
         requestScope("projectResults", activityResults);
+        requestScope("activity", activity);
+        requestScope("project", project);
+        requestScope("projectTheme", project.getTheme());
         return forward("list.jsp");
     }
 
     private Navigation showResults(Key key) {
         Result result = resultManager.select(key);
+        Activity activity = result.getActivity();
+        Project project = activity.getProject();
         requestScope("result", result);
-        requestScope("activityKey", result.getActivity().getId());
+        requestScope("activity", activity);
+        requestScope("project", project);
+        requestScope("projectTheme", project.getTheme());
         return forward("show.jsp");
     }
 }

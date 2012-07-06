@@ -23,7 +23,7 @@ public class PreviousController extends PhictController {
         if (requestParameterExists("project") && requestParameterExists("key")) {
             Key projectKey = parseKeyParameter("project");
             Key activityKey = parseKeyParameter("key");
-            return showNextActivity(activityKey, projectKey);
+            return showPreviousActivity(activityKey, projectKey);
         }
 
         throw new QueryException(
@@ -31,7 +31,7 @@ public class PreviousController extends PhictController {
 
     }
 
-    private Navigation showNextActivity(Key activityKey, Key projectKey) {
+    private Navigation showPreviousActivity(Key activityKey, Key projectKey) {
         Project project = projectManager.select(projectKey);
         Activity activity = activityManager.select(activityKey);
         List<Activity> activities = project.getActivities();
