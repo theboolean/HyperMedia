@@ -18,7 +18,7 @@
 			<div class="postit">
 				Related content:
 				<ul>
-					<li><a href="/projects/show?key=${f:h(activity.id)}"
+					<li><a href="/activities/show?key=${f:h(activity.id)}"
 						title="Activity of this event">Related Activity</a></li>
 				</ul>
 			</div>
