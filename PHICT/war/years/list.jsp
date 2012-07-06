@@ -12,6 +12,10 @@
 		<div id="content">
 			<p><a href="/themes/">You can also browse Project by Themes</a></p>
 			
+			<c:if test="${ empty years }">
+				<p> <i> Sorry, our calendar is still empty! </i> </p>
+			</c:if>
+			
 			<ul>
 			<c:forEach var="year" items="${years}">
 				<li> <a href="/years/show?key=${f:h(year)}" title="Projects of this year">${f:h(year)}</a> </li>

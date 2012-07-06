@@ -11,6 +11,11 @@
 	<div id="innerContainer">
 		<div id="content">
 			<p><a href="/years/">You can also browse Project by Years</a></p>
+			
+			<c:if test="${ empty themes }">
+				<p> <i> No research themes available yet! Probably the site is still under construction. </i> </p>
+			</c:if>
+			
 		    <c:forEach var="theme" items="${themes}">
 			    <div class="theme">
 					<h2><a href="/themes/show?key=${f:h(theme.id)}" title="Projects by this theme">${f:h(theme.name)}</a></h2>

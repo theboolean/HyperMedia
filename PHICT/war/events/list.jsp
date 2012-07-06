@@ -34,6 +34,10 @@
 			    </c:otherwise> 
 			</c:choose> 
 			
+			<c:if test="${ empty projectEvents }">
+				<p> <i> Sorry, there aren't any events in this section! </i> </p>
+			</c:if>
+			
 			<ul>
 			<c:forEach var="event" items="${projectEvents}">
 				<li> <a href="/events/show?key=${f:h(event.id)}" title="Go to event's home"> ${ event.presentation }</a> </li>

@@ -11,6 +11,11 @@
 	<div id="innerContainer">
 		<div id="content">
 		    <p> Here you can find a list of all our projects, ordered by descending join date to the program: </p>
+			
+			<c:if test="${ empty projects }">
+				<p> <i> Ooops! It appears someone has been slacking lately... </i> </p>
+			</c:if>
+			
 			<c:forEach var="project" items="${projects}">
 			    <div class="project">
 					<h2> <a href="show?key=${f:h(project.id)}" title="Go to project's home">${f:h(project.name)}</a> </h2>

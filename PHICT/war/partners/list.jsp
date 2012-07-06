@@ -29,6 +29,11 @@
 			        <p> The <i>${f:h(project.name)}</i> project is powered by researchers belonging to those institutions:</p>
 			    </c:otherwise> 
 			</c:choose>
+			
+			<c:if test="${ empty projectPartners }">
+				<p> <i> Sorry, there aren't any partners listed in this section! </i> </p>
+			</c:if>
+			
 			<c:forEach var="partner" items="${projectPartners}">
 			    <div class="project">
 					<h2> <a href="/partners/show?key=${f:h(partner.id)}" title="Go to partner's home"> ${f:h(partner.name)}</a> </h2>

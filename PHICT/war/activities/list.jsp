@@ -32,6 +32,10 @@
 			    </c:otherwise> 
 			</c:choose> 
 			
+			<c:if test="${ empty projectActivities }">
+				<p> <i> Sorry, there aren't any activities in this section! </i> </p>
+			</c:if>
+			
 		    <ul>
 			<c:forEach var="activity" items="${projectActivities}">
 			    <li> <a href="/activities/show?key=${f:h(activity.id)}" title="Go to activity's home"> ${f:h(activity.goals)}</a> </li>

@@ -11,6 +11,10 @@
 	<div id="innerContainer">
 		<div id="content">
 			<p> Here you can browse all our projects that have been already completed. </p>
+			<c:if test="${ empty projects }">
+				<p> <i> Sorry, there aren't any completed projects yet! </i> </p>
+			</c:if>
+			
 			<c:forEach var="project" items="${projects}">
 				<div class="project">
 					<h2> 
