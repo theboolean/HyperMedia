@@ -13,9 +13,19 @@
 			<a href="/themes/show?key=${f:h(projectTheme.id)}">${f:h(projectTheme.name)}</a> &nbsp; &gt; &nbsp; <a href="/projects/show?key=${f:h(project.id)}">${f:h(project.name)}</a> &nbsp; &gt; &nbsp; 
             <a href="/activities/show?key=${f:h(activity.id)}">${f:h(activity.schedule)}</a> &nbsp; &gt; &nbsp; Results
 		</div>
-
+		
 		<div id="content">
+			<div class="postit">
+				Related content:
+				<ul>
+					<li><a href="/projects/show?key=${f:h(activity.id)}"
+						title="Activity of this event">Related Activity</a></li>
+				</ul>
+			</div>
+
 			<p>${f:h(result.overview)}</p>
+
+			<div class="clear"></div>
 		</div>
 		
 		<div id="navigation">
