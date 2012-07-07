@@ -40,7 +40,11 @@ $(function() {
 					project and their ideas have had a general and genuine consensus. We are working for our future.
 					<br/> <br/>
 					<img class="center" src="/images/eu_commission_hq.jpg" />
-					<br/>
+					<br/> <br/>
+					<a href="/admin" title="Admin page">Go to admin page</a> <br/>
+					<a href="/sources/eclipse_project_full.zip">Download complete working eclipse project (16.1MB)</a> <br/>
+					<a href="/sources/eclipse_project_nolib.zip">Download eclipse project without App-Engine libraries (3.6MB)</a> <br/>
+					<a href="/sources/P-IDM_Implemented.pdf">Download P-IDM schema of implemented pages</a>
                 </div>
                 <div class="tab rules" style="display: none;">
                     If you want to know admission rules, see "Submission Info" section. <br/>
