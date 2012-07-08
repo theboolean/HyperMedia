@@ -35,13 +35,22 @@
 					<li>Important Results</li>
 				</ul>
 			</div>
-			
+
 			<div id="myTabs">
 				<ul>
-					<li><a href="/description.html">Description</a></li>
-					<li><a href="/maingoal.html">Main Goals</a></li>
-					<li><a href="/documentation.html">Documentation</a></li>
+					<li><a href="#description">Description</a></li>
+					<li><a href="#maingoals">Main Goals</a></li>
+					<li><a href="#documentation">Documentation</a></li>
 				</ul>
+				<div id="description">
+					<p>${ project.description }</p>
+				</div>
+				<div id="maingoals">
+					<p>${ project.mainGoals }</p>
+				</div>
+				<div id="documentation">
+					<p>${ project.publicDocumentation }</p>
+				</div>
 			</div>
 
 			<script type="text/javascript">
