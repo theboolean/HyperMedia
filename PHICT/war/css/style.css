@@ -182,6 +182,20 @@ a {
 	margin-bottom: 10px;
 }
 
+.tabChanger .tabselected {
+	padding: 2px 4px 2px 4px;
+	color: #1a8cfa;
+	text-shadow: #ddd 3px 3px 5px;
+	border-radius: 5px;
+	box-shadow: #999 0px 0px 10px;
+	background-color: rgba(241, 241, 241, 0.5);
+}
+
+#mytabs{
+	float: left;
+	width: 565px;
+}
+
 .theme h2, .project h2 {
 	margin-bottom: 5px;
 }

@@ -15,6 +15,7 @@
 </script>
 
 <div id="mainContainer">
+
 	<div id="innerContainer">
 		<div id="breadcrumbs">
 			<a href="/themes/show?key=${f:h(theme.id)}">${f:h(theme.name)}</a>
@@ -34,23 +35,20 @@
 					<li>Important Results</li>
 				</ul>
 			</div>
-
-			<div id="content-text" class="tabContent">
-				<h2>Description</h2>
-				<div class="tabChanger">
-					Change tab: <a href="projectDescription" title="Description">Description</a>,
-					<a href="mainGoals" title="Main Goals">Main Goals</a>, <a
-						href="publicDocumentation" title="Public Documentation">Public
-						Documentation</a>
-				</div>
-
-				<div class="tab projectDescription">${ project.description }</div>
-				<div class="tab mainGoals" style="display: none;">${
-					project.mainGoals }</div>
-				<div class="tab publicDocumentation" style="display: none;">
-					${ project.publicDocumentation }</div>
+			
+			<div id="myTabs">
+				<ul>
+					<li><a href="/description.html">Description</a></li>
+					<li><a href="/maingoal.html">Main Goals</a></li>
+					<li><a href="/documentation.html">Documentation</a></li>
+				</ul>
 			</div>
 
+			<script type="text/javascript">
+				$(function() {
+					$("#myTabs").tabs();
+				});
+			</script>
 
 			<div class="clear"></div>
 		</div>
